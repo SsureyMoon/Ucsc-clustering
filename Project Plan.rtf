@@ -171,7 +171,7 @@ update team May 15
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
 
 \f1\fs32 \cf2 \expnd0\expndtw0\kerning0
-Build functionality to measure SSE btwn original TS and feaster vectors
+Build functionality to measure SSE between original TS and feaster vectors
 \f2\fs24 \kerning1\expnd0\expndtw0 \cell 
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
 
@@ -542,12 +542,10 @@ Felix\
 \f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
 \pard\pardeftab720\sa240
 \cf2 Josue\cf0 \
-\pard\pardeftab720
-
+\cf2 Task #2: Feature generation will be done by applying a discrete wavelet transformation to a time series and using a subset of the resulting coefficient vectors as feature vectors in the clustering algorithms. The PyWavelet python library ({\field{\*\fldinst{HYPERLINK "http://www.pybytes.com/pywavelets/"}}{\fldrslt http://www.pybytes.com/pywavelets}}/) provides functions to calculate the discrete wavelet transformation (wavedec()) and to regenerate a time series from a set of coefficient vectors (waverec()). A time series will be represented as a python list. The number of items in the list needs to be a power of 2, e.g., 2^3=8, 2^5=32. I will implement a function to encapsulate the wavelet transformation. This function will take as input a dictionary of time series. Each time series will need to have a name (e.g., \'91YHOO.2015.05\'92) and this name will be used as the key in the dictionary. The function will return a dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array. The elements in that array will be the coefficient vectors associated to the key. The function will also return another dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array of reconstructed time series, each time series will have a different level of fidelity.\
+Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity in the reconstructed time series. For a time series X and reconstructed signal X\'92, the SEE value will be SSE(X,X\'92) = \\Sigma_\{t\} (Xt-X\'92t)^2, where Xt and X\'92t are the values of the original time series and the reconstructed signal at a particular point in time. With this metric we can evaluate the tradeoff between loss of fidelity and gain in clustering efficiency (as a result of using less features for each time series).
 \f4\fs26 \cf0 \expnd0\expndtw0\kerning0
-1) Good tasks are ones that you would like to work on, that you have some ideas about, and that are small enough for you to finish by the end of the semester.\
-2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
-3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
+\
 \pard\pardeftab720
 
 \f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
@@ -586,9 +584,9 @@ Felix\
 Possible applications are: \
 \
 \pard\tx220\tx720\pardeftab720\li720\fi-720
-\ls2\ilvl0\cf2 {\listtext	1	}Clustering of stocks based on their closing price time series in order to identify sufficiently distinct groups of stocks as a basis for a hedging strategy. \
-{\listtext	2	}Clustering Global currency values\
-{\listtext	3	}Clustering Earthquake reports\
+\ls2\ilvl0\cf2 {\listtext	1	}Clustering of stock closing price time series in order to identify sufficiently distinct groups of stocks as a basis for a hedging strategy. \
+{\listtext	2	}Clustering of global currency exchange time series\
+{\listtext	3	}Clustering of Earthquake time series data for specific locations\
 {\listtext	4	}Other \
 \pard\pardeftab720
 \cf0 \
@@ -611,7 +609,7 @@ If your project involves testing a hypothesis or original research, your proposa
 \
 \pard\pardeftab720
 \cf2 \expnd0\expndtw0\kerning0
-Clustering/analyzing Time Series data requires extensive computing resources due to the large number of data points.  Be able to reduce the number of data points by using an approximation of the Time Series wave length enables successful analysis for less cost. There is a caveat, one must be cautious of the risk of losing important data detail by using too course of an approximation.\
+Clustering/analyzing Time Series data requires extensive computing resources due to the large number of data points.  The hypothesis of this project is that using a reduced number of features to represent time series results in more effective clustering. Effective means that the resulting groups make practical sense. We want to verify/reject this hypothesis by applying the approach to time series from different domains: stock closing prices, currency exchange rates and earthquake data. There is a caveat, one must be cautious of the risk of losing important data detail by using too course of an approximation.\
 \pard\pardeftab720
 \cf0 \expnd0\expndtw0\kerning0
 \
@@ -620,7 +618,11 @@ Clustering/analyzing Time Series data requires extensive computing resources due
 \
 \pard\pardeftab720
 \cf2 \expnd0\expndtw0\kerning0
-Josue \'97 got an answer here??\
+The approach used in this project is similar to the one used in Reference #1 \'93
+\f0\fs28 \kerning1\expnd0\expndtw0 Unsupervised Feature Extraction for Time Series Clustering Using Orthogonal Wavelet Transform
+\f4\fs26 \expnd0\expndtw0\kerning0
+\'94. In that study the authors use a benchmark time series data sets to evaluate the effectiveness of the approach. In our case, instead of a benchmark data set, we use time series from three distinct domains.\
+\
 \pard\pardeftab720
 \cf0 \expnd0\expndtw0\kerning0
 \
@@ -628,13 +630,13 @@ Josue \'97 got an answer here??\
 \
 \pard\pardeftab720
 \cf2 \expnd0\expndtw0\kerning0
-Josue ??\cf0 \expnd0\expndtw0\kerning0
+We will perform clustering on feature vectors representing different levels of time series fidelity and will evaluate if the resulting clusters have some practical sense. For example, in the case of stocks, we\'92ll see of the clusters correspond to time series that move up and down together, or have similar \'93amplitude\'94 (i.e., same price level).\cf0 \expnd0\expndtw0\kerning0
 \
 \
 5. How you would evaluate your solution. That is, how you plan to demonstrate that your solution/answer is good or is reasonable.\
 \
 \cf2 \expnd0\expndtw0\kerning0
-We plan to use data from 2-3 sources: stock, global currency and Earthquake data. \cf0 \expnd0\expndtw0\kerning0
+We plan to use data from two or three sources: stock, global currency and Earthquake data. \cf0 \expnd0\expndtw0\kerning0
 \
 \
 If your project is to build a software tool, then your proposal should state explicitly all the following:\
