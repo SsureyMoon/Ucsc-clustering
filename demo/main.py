@@ -1,25 +1,17 @@
-import numpy as np
-import datetime
-import pywt
-import matplotlib.pyplot as plt
 import random
+import wfvg
 
 if __name__ == '__main__':
-    # Multi-level decomposition
-    TS = list()
-    for elem in range(0,2048):
-        TS.append(random.sample(range(30),1)[0])
-    coeffs = pywt.wavedec(TS,'haar',level=2)
-    coeffsL2 = [coeffs[0],coeffs[1],[0]*1024]
-    ts_recL2 = pywt.waverec(coeffsL2,'haar')
+    # Generate 'n' sample time series using a random number generator
+    n = 2  # 10
+    TSlen = 2**11
+    TS = {}
+    for i in range(1,n+1):
+        TSname = "TS." + str(int(i))
+        TS[TSname] = random.sample(range(TSlen*5),TSlen)
 
-    coeffs = pywt.wavedec(TS,'haar',level=5)
-    coeffsL5 = [coeffs[0],coeffs[1],[0]*128,[0]*256,[0]*512,[0]*1024]
-    ts_recL5 = pywt.waverec(coeffsL5,'haar')
-
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-    ax.plot(TS)
-    ax.plot(ts_recL2)
-    ax.plot(ts_recL5)
-    plt.show()
+    # Each entry TSwfv[TSname] is an array of vector coefficients
+    # Each item TSwfv[TSname][i] in the array is a feature vector (FV)
+    # Input to the clustering algorithm is all FVs with the same value of i
+    # Example: TSwfv['TS.1'][1], TSwfv['TS.2'][1], TSwfv['TS.3'][1], ...
+    TSwfv,TSsse = wfvg.generate_feature_vectors(TS)
