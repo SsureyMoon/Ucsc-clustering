@@ -1,4 +1,4 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
 {\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Calibri;\f2\fswiss\fcharset0 Helvetica;
 \f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 Verdana;}
 {\colortbl;\red255\green255\blue255;\red128\green0\blue128;\red191\green191\blue191;\red205\green205\blue205;
@@ -7,7 +7,7 @@
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
 {\info
-{\author Kathy Norman}}\margl1440\margr1440\vieww18940\viewh17400\viewkind0
+{\author Kathy Norman}}\margl1440\margr1440\vieww37900\viewh21260\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \f0\fs28 \cf0 \
@@ -15,7 +15,7 @@
 \
 \cf2 Project Proposal for 30164:(003), Machine Learning and Data Mining: Clustering Methods\
 \
-Team: Felix Huang, Jose Kuri, Surray Moon, Kathy Norman\
+Team: Felix Huang, Josue Kuri, Surray Moon, Kathy Norman\
 \
 \pard\pardeftab720
 \cf2 Title: Clustering of Time Series using Wavelet Transformations as a Feature Extraction Mechanism\
@@ -35,7 +35,7 @@ Tasks, Task Assignments, Schedule, and Tracking\
 \f1\fs32 \cf0 \
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
-\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx2160
+\clmgf \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx2160
 \clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx4320
 \clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx6480
 \clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx8640
@@ -564,6 +564,7 @@ Felix\
 \f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
 \pard\pardeftab720\sa240
 \cf0 \
+\pard\pardeftab720\sa240
 \cf2 Kathy\cf0 \
 \pard\pardeftab720
 
@@ -577,6 +578,7 @@ Felix\
 \pard\pardeftab720\sa240
 \cf0 \
 \
+\pard\pardeftab720\sa240
 \cf2 Project Definition\
 \pard\pardeftab720
 \cf2 Description: The goal of this project is to apply an unsupervised learning approach to time series in order to discover a priori unknown relationships between instances in a given group of time series.  A naive approach to clustering time series would consist in using each point of a time series as a feature in the clustering process. However, the potentially very large number of features would make the use of clustering impractical. The approach used in this project consists in using wavelet transformation as a feature extraction mechanism for a clustering algorithm. In a wavelet transformation, a time series (signal) is represented by a vector of approximation coefficients and additional vectors of detail coefficients. The original signal is completely reconstructed by combining all the coefficient vectors in an inverse wavelet transformation. A reconstruction with less fidelity can be obtained by using only the vector of approximation coefficients and only some of the vectors with detail coefficients. In our approach, a limited number of vectors of coefficients are used as features in the clustering algorithms.\
@@ -607,20 +609,33 @@ If your project involves testing a hypothesis or original research, your proposa
 \
 2. Why this is an interesting question to ask and why we would care about the answer to this question.\
 \
-\cf2 Clustering/analyzing Time Series data requires extensive computing resources due to the large number of data points.  Be able to reduce the number of data points by using an approximation of the Time Series wave length enables successful analysis for less cost. There is a caveat, one must be cautious of the risk of losing important data detail by using too course of an approximation.\
-\cf0 \
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+Clustering/analyzing Time Series data requires extensive computing resources due to the large number of data points.  Be able to reduce the number of data points by using an approximation of the Time Series wave length enables successful analysis for less cost. There is a caveat, one must be cautious of the risk of losing important data detail by using too course of an approximation.\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
 \
 3. Whether any existing research work has tried to answer the same or a similar question, and if so, what is still unknown.\
 \
-\cf2 Josue \'97 got an answer here??\
-\cf0 \
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+Josue \'97 got an answer here??\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+\
 4. How you plan to work out the answer to the question.\
 \
-\cf2 Josue ??\cf0 \
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+Josue ??\cf0 \expnd0\expndtw0\kerning0
+\
 \
 5. How you would evaluate your solution. That is, how you plan to demonstrate that your solution/answer is good or is reasonable.\
 \
-\cf2 We plan to use data from 2-3 sources: stock, global currency and Earthquake data. \cf0 \
+\cf2 \expnd0\expndtw0\kerning0
+We plan to use data from 2-3 sources: stock, global currency and Earthquake data. \cf0 \expnd0\expndtw0\kerning0
+\
 \
 If your project is to build a software tool, then your proposal should state explicitly all the following:\
 1. What the function of your tool exactly is. That is, what it will do.\
@@ -629,6 +644,8 @@ If your project is to build a software tool, then your proposal should state exp
 4. How you plan to build it.\
 5. How you will demonstrate the usefulness of your tool.\
 6. A rough timeline to show when you expect to finish what.\
-  \cf2 See our Task summary in the Project Plan. \cf0 \
+  \cf2 \expnd0\expndtw0\kerning0
+See our Task summary in the Project Plan. \cf0 \expnd0\expndtw0\kerning0
+\
 7. VERY IMPORTANT: Please specify clearly what you plan to actually finish by the end of this semester.\
 Consider documenting your work regularly. This way, you will already have a lot of things written down by the end of the semester.}
