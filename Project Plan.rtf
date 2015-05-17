@@ -550,7 +550,7 @@ Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity
 
 \f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
 \pard\pardeftab720\sa240
-\cf2 Moon\cf0 \
+\cf2 Kathy, Moon\cf0 \
 \cf2 Task #4: Although it is true that the more features we extract, the more precise time series data we can recover, there are two possible issues to consider. One of them is extracting more features are expensive. We may check elapsed time of overall task and compare it. The other of them is more features not alway mean a better model. It might over fit the data, as well as noise. We may check this by time-series cross validation, and drawing Knee curve of cross validation error.
 \f0\fs24 \cf0 \
 
@@ -558,29 +558,8 @@ Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity
 \f0\fs24 \cf0 \
 
 \f1\fs32 \cf2 Cross validation on time series is a bit different from non-time series data like this:\
-ts_cv.png({\field{\*\fldinst{HYPERLINK "https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0"}}{\fldrslt https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0}}) 
-\f3\fs26 \cf0 \expnd0\expndtw0\kerning0
+ts_cv.png({\field{\*\fldinst{HYPERLINK "https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0"}}{\fldrslt https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0}}) \cf0 \
 \
-\pard\pardeftab720
-
-\f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
-\pard\pardeftab720\sa240
-\cf0 \
-\pard\pardeftab720\sa240
-\cf2 Kathy\cf0 \
-\pard\pardeftab720
-
-\f3\fs26 \cf0 \expnd0\expndtw0\kerning0
-1) Good tasks are ones that you would like to work on, that you have some ideas about, and that are small enough for you to finish by the end of the semester.\
-2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
-3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
-\pard\pardeftab720
-
-\f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
-\pard\pardeftab720\sa240
-\cf0 \
-\
-\pard\pardeftab720\sa240
 \cf2 Project Definition\
 \pard\pardeftab720
 \cf2 Description: The goal of this project is to apply an unsupervised learning approach to time series in order to discover a priori unknown relationships between instances in a given group of time series.  A naive approach to clustering time series would consist in using each point of a time series as a feature in the clustering process. However, the potentially very large number of features would make the use of clustering impractical. The approach used in this project consists in using wavelet transformation as a feature extraction mechanism for a clustering algorithm. In a wavelet transformation, a time series (signal) is represented by a vector of approximation coefficients and additional vectors of detail coefficients. The original signal is completely reconstructed by combining all the coefficient vectors in an inverse wavelet transformation. A reconstruction with less fidelity can be obtained by using only the vector of approximation coefficients and only some of the vectors with detail coefficients. In our approach, a limited number of vectors of coefficients are used as features in the clustering algorithms.\
