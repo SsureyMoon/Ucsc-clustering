@@ -44,13 +44,13 @@ def generate_feature_vectors(TS):
 		TSsse[TSname].append(sse)
 
 		# Plotting
-		# fig = plt.figure()
-		# ax = fig.add_subplot(111)
-		# ax.plot(TS[TSname],label=TSname)
-		# ax.plot(TSrecL2,label=TSname+' (L2) SSE: '+str(int(TSsse[TSname][0]/1000000)))
-		# ax.plot(TSrecL4,label=TSname+' (L4) SSE: '+str(int(TSsse[TSname][1]/1000000)))
-		# ax.plot(TSrecL6,label=TSname+' (L6) SSE: '+str(int(TSsse[TSname][2]/1000000)))
-		# plt.legend()
-		# plt.savefig(TSname+'.pdf',edgecolor='b', format='pdf')
+		fig = plt.figure()
+		ax = fig.add_subplot(111)
+		ax.plot(TS[TSname],label=TSname)
+		ax.plot(TSrecL2,label=TSname+' (L2) SSE: '+str(int(TSsse[TSname][0])))
+		ax.plot(TSrecL4,label=TSname+' (L4) SSE: '+str(int(TSsse[TSname][1])))
+		ax.plot(TSrecL6,label=TSname+' (L6) SSE: '+str(int(TSsse[TSname][2])))
+		plt.legend(prop={'size':6})
+		plt.savefig(TSname+'.pdf',edgecolor='b', format='pdf')
 
 	return TSwfv,TSsse
