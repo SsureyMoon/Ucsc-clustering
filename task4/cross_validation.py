@@ -1,0 +1,42 @@
+import sys
+import matplotlib.pyplot as plt
+import pywt
+
+wavelettype = 'haar'
+
+sys.path.insert(0, '../')
+
+from demo.wfvg import generate_feature_vectors
+
+
+def get_recent_power_of_two(arr):
+    length = len(arr)
+    i = 0
+    power_of_two = 1
+    while (2**i) <= length:
+        i += 1
+    power_of_two = 2**(i-1)
+    return arr[(len(arr)-power_of_two):]
+
+input_file_path = "../data/cv_test/"
+with open(input_file_path+"data1", "r") as file:
+
+    line = file.readline()
+    line_trimed = list()
+    while line:
+        line_trimed.append(float(line.replace("\n", "")))
+        line = file.readline()
+
+    input = get_recent_power_of_two(line_trimed)
+    TS = {}
+    TS["orig"] = input
+    TSwfv,TSsse  = generate_feature_vectors(TS)
+    print TSwfv["orig"]
+    TSrec = pywt.waverec(TSwfv["orig"],wavelettype)
+    #TSrecL6 = pywt.waverec(c,wavelettype)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.plot(TS["orig"],label="orig")
+    ax.plot(TSrec,label="decoded")
+    plt.legend()
+    plt.show()
