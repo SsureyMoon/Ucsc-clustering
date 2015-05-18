@@ -1,8 +1,8 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
 {\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
 \f3\fnil\fcharset0 Verdana;}
 {\colortbl;\red255\green255\blue255;\red128\green0\blue128;\red191\green191\blue191;\red205\green205\blue205;
-}
+\red100\green14\blue47;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
@@ -511,7 +511,9 @@ update team May 25, 27, 30
 Prepare Project Report
 \fs24 \kerning1\expnd0\expndtw0 \cell 
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
-\cf2 \cell 
+
+\fs28 \cf2 June 1 Presentation of Project
+\fs24 \cell 
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
 
 \fs32 \cf2 \expnd0\expndtw0\kerning0
@@ -520,10 +522,12 @@ Felix, Josue, Moon & Kathy
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
 
 \fs32 \cf2 \expnd0\expndtw0\kerning0
-??? have sent e-mail to instructor re due date
+June 5, 2015
 \fs24 \kerning1\expnd0\expndtw0 \cell 
 \pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
-\cf2 \cell \lastrow\row
+
+\fs28 \cf2 update the team June 3,4,5
+\fs24 \cell \lastrow\row
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 \cf2 \
 \pard\pardeftab720\sa240
@@ -559,7 +563,25 @@ Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity
 
 \f1\fs32 \cf2 Cross validation on time series is a bit different from non-time series data like this:\
 ts_cv.png({\field{\*\fldinst{HYPERLINK "https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0"}}{\fldrslt https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0}}) \cf0 \
+\pard\pardeftab720\sa240
+
+\fs28 \cf5 Kathy
+\f3 \expnd0\expndtw0\kerning0
 \
+\pard\pardeftab720
+\cf5 \expnd0\expndtw0\kerning0
+2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
+\
+Yes, I am working with Moon to complete Task #4.  We have  good idea on how to complete this.  Also, I am using the project code to analyze Earthquake data.  I will be clustering the occurrences of the Earthquakes (in or within 50 miles of San Jose and Dallas) for May 2015, and May 2012. \
+\
+3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
+\
+Everyone is working on different aspects of the project.   Moon and I are working on task #4 together, however we will be dividing that task into separate activities. We will discuss our task2 participation separately.
+\fs26 \
+\pard\pardeftab720
+
+\f1\fs32 \cf5 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa240
 \cf2 Project Definition\
 \pard\pardeftab720
 \cf2 Description: The goal of this project is to apply an unsupervised learning approach to time series in order to discover a priori unknown relationships between instances in a given group of time series.  A naive approach to clustering time series would consist in using each point of a time series as a feature in the clustering process. However, the potentially very large number of features would make the use of clustering impractical. The approach used in this project consists in using wavelet transformation as a feature extraction mechanism for a clustering algorithm. In a wavelet transformation, a time series (signal) is represented by a vector of approximation coefficients and additional vectors of detail coefficients. The original signal is completely reconstructed by combining all the coefficient vectors in an inverse wavelet transformation. A reconstruction with less fidelity can be obtained by using only the vector of approximation coefficients and only some of the vectors with detail coefficients. In our approach, a limited number of vectors of coefficients are used as features in the clustering algorithms.\
