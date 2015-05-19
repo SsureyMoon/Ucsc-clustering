@@ -8,7 +8,6 @@ def generate_feature_vectors(TS):
 	TSwfv = {} # Wavelet feature vector
 	TSsse = {} # Sum of Square Errors
 	for TSname in TS:
-		print TSname
 		cL2 = pywt.wavedec(TS[TSname],wavelettype,level=2)
 		cL4 = pywt.wavedec(TS[TSname],wavelettype,level=4)
 		cL6 = pywt.wavedec(TS[TSname],wavelettype,level=6)
@@ -16,6 +15,9 @@ def generate_feature_vectors(TS):
 		TSwfv[TSname] = [list(cL2[0])+list(cL2[1]), \
 			list(cL4[0])+list(cL4[1]), \
 			list(cL6[0])+list(cL6[1])]
+		#print len(TSwfv[TSname][0])
+		#print len(TSwfv[TSname][1])
+		#print len(TSwfv[TSname][2])
 
 		#print "TSwfv[{0}]:{1}".format(TSname,TSwfv[TSname])
 
@@ -25,6 +27,7 @@ def generate_feature_vectors(TS):
 		c = [cL2[0],cL2[1]]
 		for i in range(2,len(cL2)):
 			c.append([0]*len(cL2[i]))
+
 		TSrecL2 = pywt.waverec(c,wavelettype)
 		sse = sum([(TS[TSname][i]-TSrecL2[i])**2 for i,v in enumerate(TSrecL2)])
 		TSsse[TSname].append(sse)
@@ -32,6 +35,7 @@ def generate_feature_vectors(TS):
 		c = [cL4[0],cL4[1]]
 		for i in range(2,len(cL4)):
 			c.append([0]*len(cL4[i]))
+
 		TSrecL4 = pywt.waverec(c,wavelettype)
 		sse = sum([(TS[TSname][i]-TSrecL4[i])**2 for i,v in enumerate(TSrecL4)])
 		TSsse[TSname].append(sse)
@@ -39,6 +43,7 @@ def generate_feature_vectors(TS):
 		c = [cL6[0],cL6[1]]
 		for i in range(2,len(cL6)):
 			c.append([0]*len(cL6[i]))
+
 		TSrecL6 = pywt.waverec(c,wavelettype)
 		sse = sum([(TS[TSname][i]-TSrecL6[i])**2 for i,v in enumerate(TSrecL6)])
 		TSsse[TSname].append(sse)

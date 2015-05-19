@@ -67,6 +67,7 @@ if __name__ == '__main__':
         for i in range(1,len(TS[TSname])):
             TSpct[TSname].append(TS[TSname][i]/TS[TSname][0])
 
+
     # Each entry TSwfv[TSname] is an array of vector coefficients
     # Each item TSwfv[TSname][i] in the array is a feature vector (FV)
     # Input to the clustering algorithm is all FVs with the same value of i
