@@ -47,7 +47,7 @@ if __name__ == '__main__':
     stock_split = {}
     stock_split['GOOGL'] = ('2014-04-02',2)
     stock_split['AAPL'] = ('2014-06-06',7)
-    # TO DO: Check splits for AMX, COP, NOK 
+    stock_split['AMX'] = ('2011-06-30',2)
 
     start = datetime.datetime(2011, 4, 20)
     end = datetime.datetime(2015, 5, 16)
