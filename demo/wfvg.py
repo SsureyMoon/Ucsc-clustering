@@ -52,9 +52,9 @@ def generate_feature_vectors(TS):
 		fig = plt.figure()
 		ax = fig.add_subplot(111)
 		ax.plot(TS[TSname],label=TSname)
-		ax.plot(TSrecL2,label=TSname+' (L2) SSE: '+str(int(TSsse[TSname][0])))
-		ax.plot(TSrecL4,label=TSname+' (L4) SSE: '+str(int(TSsse[TSname][1])))
-		ax.plot(TSrecL6,label=TSname+' (L6) SSE: '+str(int(TSsse[TSname][2])))
+		ax.plot(TSrecL2,label=TSname+' (L2) SSE: '+str(TSsse[TSname][0]))
+		ax.plot(TSrecL4,label=TSname+' (L4) SSE: '+str(TSsse[TSname][1]))
+		ax.plot(TSrecL6,label=TSname+' (L6) SSE: '+str(TSsse[TSname][2]))
 		plt.legend(prop={'size':6})
 		plt.savefig(TSname+'.pdf',edgecolor='b', format='pdf')
 
