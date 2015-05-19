@@ -5,6 +5,7 @@ import wfvg
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
+from sklearn import cluster
 
 if __name__ == '__main__':
     TS = {}
@@ -45,6 +46,7 @@ if __name__ == '__main__':
 
     TSwfv,TSsse,TSrec = wfvg.generate_feature_vectors(TSpct)
 
+    # Clustering with Kmeans
     # Retrieve the L4 coefficients for all time series
     dataset = [ TSwfv[k][1] for k,v in TSwfv.iteritems() ]
     datasetnames = [k for k,v in TSwfv.iteritems()]
@@ -52,10 +54,26 @@ if __name__ == '__main__':
     TScL4 = dict(zip(datasetnames, model.labels_))
     print TScL4
     for i in range(min(model.labels_),max(model.labels_)+1):
-        print "Cluster", i
+        print "[Kmeans] Cluster", i
         fig = plt.figure()
         ax = fig.add_subplot(111)
         for k in [key for key,val in TScL4.iteritems() if TScL4[key]==i]:
             ax.plot(TSrec[k][1],label=k+' L4 ')
         plt.legend(prop={'size':6},loc=0)
-        plt.savefig('Cluster'+str(i)+'.pdf',edgecolor='b', format='pdf')
+        plt.savefig('Cluster'+str(i)+'-kmeans.pdf',edgecolor='b', format='pdf')
+
+    # Clustering with Spectral Clustering
+    spectral = cluster.SpectralClustering(n_clusters=8,
+                                          eigen_solver='arpack',
+                                          affinity="nearest_neighbors")
+    model = spectral.fit(dataset)
+    TSspecdenL4 = dict(zip(datasetnames, model.labels_))
+    print TSspecdenL4
+    for i in range(min(model.labels_),max(model.labels_)+1):
+        print "[Spectral density] Cluster", i
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        for k in [key for key,val in TSspecdenL4.iteritems() if TSspecdenL4[key]==i]:
+            ax.plot(TSrec[k][1],label=k+' L4 ')
+        plt.legend(prop={'size':6},loc=0)
+        plt.savefig('Cluster'+str(i)+'-sd.pdf',edgecolor='b', format='pdf')
