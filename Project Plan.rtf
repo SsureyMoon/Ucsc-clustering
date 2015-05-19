@@ -526,32 +526,18 @@ Felix, Josue, Moon & Kathy
 \cf2 \cell \lastrow\row
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 \cf2 \
-\pard\pardeftab720\sa240
-
-\fs32 \cf2 \
-\
-Felix\
 \pard\pardeftab720
 
-\f3\fs26 \cf0 \expnd0\expndtw0\kerning0
-1) Good tasks are ones that you would like to work on, that you have some ideas about, and that are small enough for you to finish by the end of the semester.\
-2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
-3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
-\pard\pardeftab720
-
-\f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
+\fs32 \cf0 \
 \pard\pardeftab720\sa240
-\cf2 Josue\cf0 \
-\cf2 Task #2: Feature generation will be done by applying a discrete wavelet transformation to a time series and using a subset of the resulting coefficient vectors as feature vectors in the clustering algorithms. The PyWavelet python library ({\field{\*\fldinst{HYPERLINK "http://www.pybytes.com/pywavelets/"}}{\fldrslt http://www.pybytes.com/pywavelets}}/) provides functions to calculate the discrete wavelet transformation (wavedec()) and to regenerate a time series from a set of coefficient vectors (waverec()). A time series will be represented as a python list. The number of items in the list needs to be a power of 2, e.g., 2^3=8, 2^5=32. I will implement a function to encapsulate the wavelet transformation. This function will take as input a dictionary of time series. Each time series will need to have a name (e.g., \'91YHOO.2015.05\'92) and this name will be used as the key in the dictionary. The function will return a dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array. The elements in that array will be the coefficient vectors associated to the key. The function will also return another dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array of reconstructed time series, each time series will have a different level of fidelity.\
-Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity in the reconstructed time series. For a time series X and reconstructed signal X\'92, the SEE value will be SSE(X,X\'92) = \\Sigma_\{t\} (Xt-X\'92t)^2, where Xt and X\'92t are the values of the original time series and the reconstructed signal at a particular point in time. With this metric we can evaluate the tradeoff between loss of fidelity and gain in clustering efficiency (as a result of using less features for each time series).
+\cf0 \
+\pard\pardeftab720\sa240
+\cf2 Feature generation will be done by applying a discrete wavelet transformation to a time series and using a subset of the resulting coefficient vectors as feature vectors in the clustering algorithms. The PyWavelet python library ({\field{\*\fldinst{HYPERLINK "http://www.pybytes.com/pywavelets/"}}{\fldrslt http://www.pybytes.com/pywavelets}}/) provides functions to calculate the discrete wavelet transformation (wavedec()) and to regenerate a time series from a set of coefficient vectors (waverec()). A time series will be represented as a python list. The number of items in the list needs to be a power of 2, e.g., 2^3=8, 2^5=32. I will implement a function to encapsulate the wavelet transformation. This function will take as input a dictionary of time series. Each time series will need to have a name (e.g., \'91YHOO.2015.05\'92) and this name will be used as the key in the dictionary. The function will return a dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array. The elements in that array will be the coefficient vectors associated to the key. The function will also return another dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array of reconstructed time series, each time series will have a different level of fidelity.\
+SSE (Sum of Square Errors) will be used to measure the loss of fidelity in the reconstructed time series. For a time series X and reconstructed signal X\'92, the SEE value will be SSE(X,X\'92) = \\Sigma_\{t\} (Xt-X\'92t)^2, where Xt and X\'92t are the values of the original time series and the reconstructed signal at a particular point in time. With this metric we can evaluate the tradeoff between loss of fidelity and gain in clustering efficiency (as a result of using less features for each time series).
 \f3\fs26 \cf0 \expnd0\expndtw0\kerning0
 \
-\pard\pardeftab720
 
-\f1\fs32 \cf0 \kerning1\expnd0\expndtw0 \
-\pard\pardeftab720\sa240
-\cf2 Kathy, Moon\cf0 \
-\cf2 Task #4: Although it is true that the more features we extract, the more precise time series data we can recover, there are two possible issues to consider. One of them is extracting more features are expensive. We may check elapsed time of overall task and compare it. The other of them is more features not alway mean a better model. It might over fit the data, as well as noise. We may check this by time-series cross validation, and drawing Knee curve of cross validation error.
+\f1\fs32 \cf2 \kerning1\expnd0\expndtw0 Although it is true that the more features we extract, the more precise time series data we can recover, there are two possible issues to consider. One of them is extracting more features are expensive. We may check elapsed time of overall task and compare it. The other of them is more features not alway mean a better model. It might over fit the data, as well as noise. We may check this by time-series cross validation, and drawing Knee curve of cross validation error.
 \f0\fs24 \cf0 \
 
 \f1\fs32 \cf2 This task is  to try extracting several numbers of features(also can be called complexity) of each data, getting cross-validation errors, and then finding the number of features which is on the steepest point of the knee curve of the cross validation errors.
