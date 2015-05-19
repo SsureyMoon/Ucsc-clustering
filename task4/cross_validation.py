@@ -1,10 +1,13 @@
+from __future__ import division
 import pandas.io.data as web
 import datetime
 import sys
 import matplotlib.pyplot as plt
 import pywt
 import numpy as np
-from sklearn.cluster import KMeans
+from sklearn import preprocessing
+from sklearn.cluster import KMeans, DBSCAN
+
 
 wavelettype = 'haar'
 
@@ -23,6 +26,7 @@ def get_recent_power_of_two(arr):
     return arr[(len(arr)-power_of_two):]
 
 
+
 TS={}
 
 start = datetime.datetime(2011, 4, 20)
@@ -35,15 +39,45 @@ TS['TS.MSFT'] = get_recent_power_of_two(list(web.DataReader("MSFT", 'yahoo', sta
 TSwfv,TSsse = generate_feature_vectors(TS)
 
 
-
 dataset = np.array([TSwfv['TS.YHOO'][0], TSwfv['TS.GOOGL'][0], TSwfv['TS.AAPL'][0], TSwfv['TS.MSFT'][0]])
 
 
 model = KMeans(init='k-means++', n_clusters=2, n_init=4).fit(dataset)
 labels = model.labels_
 
+print "\n\nK-means"
 print labels
 
+
+model = DBSCAN().fit(dataset)
+labels = model.labels_
+
+print "\n\nDBSCAN"
+print labels
+
+
+dataset = np.array([TSwfv['TS.YHOO'][2], TSwfv['TS.GOOGL'][2], TSwfv['TS.AAPL'][2], TSwfv['TS.MSFT'][2]])
+
+model = DBSCAN(eps=0.5, min_samples=1).fit(dataset)
+print model.get_params
+labels = model.labels_
+
+print "\n\nDBSCAN after two-axis projection"
+print labels
+
+
+min_max_scaler = preprocessing.MinMaxScaler()
+scaled_dataset = min_max_scaler.fit_transform(dataset)
+
+
+model = DBSCAN(eps=0.5, min_samples=1).fit(scaled_dataset)
+print model.get_params
+labels = model.labels_
+
+print "\n\nDBSCAN after two-axis projection, normaliztion"
+print "scaled dataset:"
+print scaled_dataset
+print labels
 
 
 """input_file_path = "../data/cv_test/"
