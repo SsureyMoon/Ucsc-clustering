@@ -40,14 +40,15 @@ TSwfv,TSsse = generate_feature_vectors(TS)
 
 
 dataset = np.array([TSwfv['TS.YHOO'][0], TSwfv['TS.GOOGL'][0], TSwfv['TS.AAPL'][0], TSwfv['TS.MSFT'][0]])
-
+print len(TSwfv['TS.YHOO'][0])
+print len(TSwfv['TS.YHOO'][1])
+print len(TSwfv['TS.YHOO'][2])
 
 model = KMeans(init='k-means++', n_clusters=2, n_init=4).fit(dataset)
 labels = model.labels_
 
 print "\n\nK-means"
 print labels
-
 
 model = DBSCAN().fit(dataset)
 labels = model.labels_
