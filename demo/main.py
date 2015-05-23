@@ -8,8 +8,9 @@ from sklearn.cluster import KMeans
 from sklearn import cluster
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
-
 import pickle
+
+download = False
 
 if __name__ == '__main__':
     TS = {}
@@ -33,22 +34,23 @@ if __name__ == '__main__':
     start = datetime.datetime(2011, 4, 20)
     end = datetime.datetime(2015, 5, 16)
 
-    for ticker in symbols:
-        key = "TS."+ticker
-        print "Retrieving {0} ...".format(ticker)
-        L = web.DataReader(ticker, 'yahoo', start, end)
-        # Correct stock splits
-        if ticker in stock_split:
-            L.loc[:stock_split[ticker][0],'Close'] = L[:stock_split[ticker][0]]['Close']/stock_split[ticker][1]
-        TS[key] = list(L['Close'].values)
-
-    # Save time series to file
-    pickle.dump(TS,open("savedTS.dat",'wb'))
-    # Retrieve time series from file
-    TSloaded = pickle.load(open("savedTS.dat","rb"))
+    if download:
+        for ticker in symbols:
+            key = "TS."+ticker
+            print "Retrieving {0} ...".format(ticker)
+            L = web.DataReader(ticker, 'yahoo', start, end)
+            # Correct stock splits
+            if ticker in stock_split:
+                L.loc[:stock_split[ticker][0],'Close'] = L[:stock_split[ticker][0]]['Close']/stock_split[ticker][1]
+            TS[key] = list(L['Close'].values)
+        # Save time series to file
+        pickle.dump(TS,open("savedTS.dat",'wb'))
+    else:
+        # Retrieve time series from file
+        TS = pickle.load(open("savedTS.dat","rb"))
 
     # Generate normalized time series
-    for TSname in TSloaded:
+    for TSname in TS:
         TSpct[TSname] = [0]
         for i in range(1,len(TS[TSname])):
             TSpct[TSname].append(TS[TSname][i]/TS[TSname][0])
