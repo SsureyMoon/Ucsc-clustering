@@ -185,7 +185,7 @@ if __name__ == '__main__':
         for enum, name in enumerate(clustering_names):
             score_list = []
             for number_of_cluster in number_of_cluster_list:
-                 score_list.append(get_silhouette_score(name, TSwfv, 6, number_of_cluster))
+                 score_list.append(get_silhouette_score(name, TSwfv, level, number_of_cluster))
             plt.plot(number_of_cluster_list, score_list, colors[enum], label=name)
             plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
 
