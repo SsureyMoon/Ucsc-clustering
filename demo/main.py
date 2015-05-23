@@ -9,6 +9,7 @@ from sklearn import cluster
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
 
+import pickle
 
 if __name__ == '__main__':
     TS = {}
@@ -16,12 +17,18 @@ if __name__ == '__main__':
     symbols = ['YHOO','GOOGL','AAPL','MSFT','BIDU','IBM','EBAY','ORCL','CSCO',
     'SAP','VZ','T','CMCSA','AMX','QCOM','NOK','AMZN','WMT','COST','TGT','CVX',
     'TOT','BP','XOM','E','COP','APA','GS','MS','BK','CS','SMFG','DB','RY','CS',
-    'BCS','SAN','BNPQY','NKE','DECK']
+    'BCS','SAN','BNPQY','NKE','DECK','PCLN','EMC','INTC','AMD','NVDA','TXN',
+    'BRCM','ADI','WFM','TFM','INFN','CIEN','CSC','TMO','BSX','TIVO','DISH',
+    'SATS','LORL','ORAN','IMASF','IRDM','HRS','GD','BA','LMT','NOC','RTN',
+    'TXT','ERJ','UTX','SPR','BDRBF','AAL','DAL','HA','UAL','LUV','JBLU','ALGT',
+    'RJET','RCL','CCL','DIS','CBS','FOXA','QVCA','DWA','VIAB','TM',
+    'TWX','DISCA','SNI','MSG','PG','ENR','HRG','SPB','KMB','TSLA']
     stock_split = {}
     stock_split['GOOGL'] = ('2014-04-02',2)
     stock_split['AAPL'] = ('2014-06-06',7)
     stock_split['AMX'] = ('2011-06-30',2)
     stock_split['NKE'] = ('2012-12-25',2)
+    stock_split['WFM'] = ('2013-05-29',2)
 
     start = datetime.datetime(2011, 4, 20)
     end = datetime.datetime(2015, 5, 16)
@@ -35,8 +42,13 @@ if __name__ == '__main__':
             L.loc[:stock_split[ticker][0],'Close'] = L[:stock_split[ticker][0]]['Close']/stock_split[ticker][1]
         TS[key] = list(L['Close'].values)
 
+    # Save time series to file
+    pickle.dump(TS,open("savedTS.dat",'wb'))
+    # Retrieve time series from file
+    TSloaded = pickle.load(open("savedTS.dat","rb"))
+
     # Generate normalized time series
-    for TSname in TS:
+    for TSname in TSloaded:
         TSpct[TSname] = [0]
         for i in range(1,len(TS[TSname])):
             TSpct[TSname].append(TS[TSname][i]/TS[TSname][0])
