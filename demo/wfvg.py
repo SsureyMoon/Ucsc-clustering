@@ -13,11 +13,13 @@ def generate_feature_vectors(TS):
 		cL4 = pywt.wavedec(TS[TSname],wavelettype,level=4)
 		cL6 = pywt.wavedec(TS[TSname],wavelettype,level=6)
 		cL8 = pywt.wavedec(TS[TSname],wavelettype,level=8)
+		cL10 = pywt.wavedec(TS[TSname],wavelettype,level=10)
 		# Generate array of feature vectors for this time series
 		TSwfv[TSname] = [list(cL2[0])+list(cL2[1]), \
 			list(cL4[0])+list(cL4[1]), \
 			list(cL6[0])+list(cL6[1]), \
-			list(cL8[0])+list(cL8[1])]
+			list(cL8[0])+list(cL8[1]), \
+			list(cL10[0])+list(cL10[1])]
 		#print len(TSwfv[TSname][0])
 		#print len(TSwfv[TSname][1])
 		#print len(TSwfv[TSname][2])

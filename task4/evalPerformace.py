@@ -18,6 +18,79 @@ from demo.wfvg import generate_feature_vectors
 
 download = False
 
+
+
+def two_means(number_of_cluster, connectivity):
+    return cluster.MiniBatchKMeans(n_clusters=number_of_cluster)
+
+def affinity_propagation(number_of_cluster, connectivity):
+    return cluster.AffinityPropagation(damping=.9, preference=-200)
+
+def ward(number_of_cluster, connectivity):
+    return cluster.AgglomerativeClustering(n_clusters=number_of_cluster, linkage='ward',
+                                       connectivity=connectivity)
+
+def spectral(number_of_cluster, connectivity):
+    return cluster.SpectralClustering(n_clusters=number_of_cluster,
+                                      eigen_solver='arpack',
+                                      affinity="nearest_neighbors")
+
+def average_linkage(number_of_cluster, connectivity):
+    return cluster.AgglomerativeClustering(
+            linkage="average", affinity="cityblock", n_clusters=number_of_cluster,
+            connectivity=connectivity)
+
+def birch(number_of_cluster, connectivity):
+    return cluster.Birch(n_clusters=number_of_cluster)
+
+def dbscan(number_of_cluster, connectivity):
+    return cluster.DBSCAN(eps=0.5, min_samples=1)
+
+def get_silhouette_score(algorithm_name, dataX, level=4, number_of_cluster=8):
+    index = int(level/2-1)
+    if index < 0:
+        index = 0
+
+    dataset_for_cluster = [ dataX[k][index] for k,v in dataX.iteritems() ]
+    datasetnames = [k for k,v in dataX.iteritems()]
+    #min_max_scaler = preprocessing.MinMaxScaler()
+    #min_max_scaler.fit_transform(dataset_for_cluster)
+    #scaled_dataset = preprocessing.normalize(dataset_for_cluster)
+
+    dataset_for_plot = [ dataX[k][4] for k,v in dataX.iteritems()]
+
+    X = np.array(dataset_for_cluster)
+    # estimate bandwidth for mean shift
+    bandwidth = cluster.estimate_bandwidth(X, quantile=0.3)
+    # connectivity matrix for structured Ward
+    connectivity = kneighbors_graph(X, n_neighbors=number_of_cluster, include_self=False)
+    # make connectivity symmetric
+    connectivity = 0.5 * (connectivity + connectivity.T)
+
+    # create clustering estimators
+
+
+    clustering_algorithms = {
+        'MiniBatchKMeans':two_means, 'AffinityPropagation':affinity_propagation,
+        'SpectralClustering':spectral, 'Ward':ward, 'AgglomerativeClustering':average_linkage,
+        'Birch':birch, 'DBSCAN': dbscan
+    }
+
+
+    algorithm = clustering_algorithms[algorithm_name](number_of_cluster, connectivity)
+    algorithm.fit(X)
+
+    ds = dict(zip(datasetnames, algorithm.labels_))
+    if len(set(algorithm.labels_)) > 1 and len(set(algorithm.labels_))<len(algorithm.labels_):
+        score = metrics.silhouette_score(X, algorithm.labels_, metric='euclidean')
+    else:
+        score = 0
+
+    return score
+
+
+
+
 if __name__ == '__main__':
     TS = {}
     TSpct = {}
@@ -69,78 +142,55 @@ if __name__ == '__main__':
     clustering_names = [
         'MiniBatchKMeans', 'AffinityPropagation',
         'SpectralClustering', 'Ward', 'AgglomerativeClustering',
-        'Birch']
+        'Birch', 'DBSCAN']
 
      # Retrieve the L4 coefficients for all time series
-    score_dict={}
+    '''score_dict={}
     for al in clustering_names:
-        score_dict[al] = []
-
-    for level in range(0,5):
-        dataset_for_cluster = [ TSwfv[k][level] for k,v in TSwfv.iteritems() ]
-        datasetnames = [k for k,v in TSwfv.iteritems()]
-        min_max_scaler = preprocessing.MinMaxScaler()
-        scaled_dataset = dataset_for_cluster
-            #min_max_scaler.fit_transform(dataset_for_cluster)
-        #scaled_dataset = preprocessing.normalize(dataset_for_cluster)
-
-        dataset_for_plot = [ TSwfv[k][4] for k,v in TSwfv.iteritems() ]
-        scaled_dataset_for_plot = min_max_scaler.fit_transform(dataset_for_plot)
+        score_dict[al] = []'''
+    score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)
+    print score
 
 
-        X = np.array(scaled_dataset)
-        # estimate bandwidth for mean shift
-        bandwidth = cluster.estimate_bandwidth(X, quantile=0.3)
-        # connectivity matrix for structured Ward
-        connectivity = kneighbors_graph(X, n_neighbors=10, include_self=False)
-        # make connectivity symmetric
-        connectivity = 0.5 * (connectivity + connectivity.T)
-
-        # create clustering estimators
-        two_means = cluster.MiniBatchKMeans(n_clusters=8)
-        ward = cluster.AgglomerativeClustering(n_clusters=8, linkage='ward',
-                                               connectivity=connectivity)
-        spectral = cluster.SpectralClustering(n_clusters=8,
-                                              eigen_solver='arpack',
-                                              affinity="nearest_neighbors")
-        # dbscan = cluster.DBSCAN(eps=.2)
-        affinity_propagation = cluster.AffinityPropagation(damping=.9,
-                                                           preference=-200)
-
-        average_linkage = cluster.AgglomerativeClustering(
-            linkage="average", affinity="cityblock", n_clusters=8,
-            connectivity=connectivity)
-
-        dbscan = DBSCAN(eps=0.5, min_samples=1)
-
-        birch = cluster.Birch(n_clusters=8)
-        clustering_algorithms = [
-            two_means, affinity_propagation, spectral, ward, average_linkage,
-            birch]
-
-
-
-
-
-        for name, algorithm in zip(clustering_names, clustering_algorithms):
-            algorithm.fit(X)
-            ds = dict(zip(datasetnames, algorithm.labels_))
-            if len(set(algorithm.labels_)) > 1:
-                score = metrics.silhouette_score(X, algorithm.labels_, metric='euclidean')
-            else:
-                score = 0
-            score_dict[name].append(score)
 
     plt.figure()
     plt.hold(True)
     plt.axis([1.5, 10.5, -0.1, 0.7])
+    colors = ['b', 'r', 'k', 'g', 'c', 'm', 'y']
+    #getting score dict according to level of feature extraction
+
     level_list = [2, 4, 6, 8, 10]
-    colors = ['b', 'r', 'k', 'g', 'c', 'm']
-    for enum, key in enumerate(score_dict):
-        plt.plot(level_list, score_dict[key], colors[enum], label=key)
-        plt.plot(level_list, score_dict[key], colors[enum]+'o')
+    for enum, name in enumerate(clustering_names):
+        score_list = []
+        for level in level_list:
+             score_list.append(get_silhouette_score(name, TSwfv, level, 8))
+        plt.plot(level_list, score_list, colors[enum], label=name)
+        plt.plot(level_list, score_list, colors[enum]+'o')
+
+    plt.title('number_of_cluster=8')
     plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1)
     plt.ylabel('silhouette_score')
     plt.xlabel('feature_extraction level')
-    plt.savefig('silhouette_score_plot.pdf',edgecolor='b', format='pdf')
+    plt.savefig('silhouette_score_plot_per_level.pdf',edgecolor='b', format='pdf')
 
+
+
+    for level in level_list:
+        plt.figure()
+        plt.hold(True)
+        plt.axis([1.5, 10.5, -0.1, 0.9])
+        colors = ['b', 'r', 'k', 'g', 'c', 'm', 'y']
+        #getting score dict according to level of feature extraction
+        number_of_cluster_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        for enum, name in enumerate(clustering_names):
+            score_list = []
+            for number_of_cluster in number_of_cluster_list:
+                 score_list.append(get_silhouette_score(name, TSwfv, 6, number_of_cluster))
+            plt.plot(number_of_cluster_list, score_list, colors[enum], label=name)
+            plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
+
+        plt.title('level='+str(level))
+        plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1)
+        plt.ylabel('silhouette_score')
+        plt.xlabel('number_of_cluster')
+        plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(level)+').pdf',edgecolor='b', format='pdf')
