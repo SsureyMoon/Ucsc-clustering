@@ -148,8 +148,9 @@ if __name__ == '__main__':
     '''score_dict={}
     for al in clustering_names:
         score_dict[al] = []'''
+
+    #example
     score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)
-    print score
 
 
 
@@ -175,7 +176,7 @@ if __name__ == '__main__':
 
 
 
-    for level in level_list:
+    for le in level_list:
         plt.figure()
         plt.hold(True)
         plt.axis([1.5, 10.5, -0.1, 0.9])
@@ -184,13 +185,13 @@ if __name__ == '__main__':
         number_of_cluster_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
         for enum, name in enumerate(clustering_names):
             score_list = []
-            for number_of_cluster in number_of_cluster_list:
-                 score_list.append(get_silhouette_score(name, TSwfv, level, number_of_cluster))
+            for number in number_of_cluster_list:
+                score_list.append(get_silhouette_score(name, TSwfv, le, number))
             plt.plot(number_of_cluster_list, score_list, colors[enum], label=name)
             plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
 
-        plt.title('level='+str(level))
+        plt.title('level='+str(le))
         plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1)
         plt.ylabel('silhouette_score')
         plt.xlabel('number_of_cluster')
-        plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(level)+').pdf',edgecolor='b', format='pdf')
+        plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')
