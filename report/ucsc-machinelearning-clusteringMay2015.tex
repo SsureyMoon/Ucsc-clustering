@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{subfigure,graphicx}
 
 \title{Clustering of Time Series using Wavelet Transformations as a Feature Extraction Mechanism}
 \author{\textsf{Kathy Norman, Ssurey Moon, Felix Huang, Josu\'e Kuri}\\UCSC Extension - 30164:(003) Machine Learning and Data Mining}
@@ -20,12 +21,42 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \subsection{Evaluation criteria}
 
+
 \subsection{Data description}
+
 \subsubsection{Stock closing prices}
+
 \subsubsection{Historic exchange rates}
-\subsection{Historic earthquake data}
+
+\subsubsection{Historic earthquake data}
+
 
 \subsection{Performance evaluation}
+
+\begin{figure}
+\begin{center}
+\subfigure[Level 2]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf}}
+\subfigure[Level 4]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf}}
+\subfigure[Level 6]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf}}
+\subfigure[Level 8]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf}}
+\caption{Silhouette score for various clustering levels.} \label{silhouette_levels}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\subfigure[Two clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=2).pdf}}
+\subfigure[Three clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=3).pdf}}
+\subfigure[Four clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=4).pdf}}
+\subfigure[Five clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=5).pdf}}
+\subfigure[Six clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=6).pdf}}
+\subfigure[Seven clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=7).pdf}}
+\subfigure[Eight clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=8).pdf}}
+\subfigure[Nine clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=9).pdf}}
+\caption{Silhouette score for various clustering levels.} \label{silhouette_levels}
+\end{center}
+\end{figure}
 
 
 \section{Conclusions}
