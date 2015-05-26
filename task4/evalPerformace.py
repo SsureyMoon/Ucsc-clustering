@@ -197,7 +197,7 @@ if __name__ == '__main__':
             plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
 
         plt.title('level='+str(le))
-        plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1, prop={'size':3})
+        plt.legend(loc=0, prop={'size':6})
         plt.ylabel('silhouette_score')
         plt.xlabel('number_of_cluster')
         plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')
