@@ -29,7 +29,7 @@ Early work on wavelets originated with Morlet in the 1980s as a new tool for sei
 
 \section{Wavelet-based feature extraction}
 
-Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered sequence of $n \in 2^J, J \in \mathbb{N}$ numbers. After decomposing $\overrightarrow{X}$ at a resolution $r$, the coefficients associated to the $r$ level can be represented as a series $\{A_r,D_r,D_{r-1},...,D_2,D_1\}$. The first element $A_r$ is the approximation coefficients array, and the subsequent elements $D_r,D_{r-1},...,D_2,D_1$ are the details coefficients arrays. In this project we use the vector $\widehat{X} = \{A_r,D_r\}$ at specific levels $r \in \{2,4,6,8,10\}$ as feature vectors for the clustering of a set of time series. The cardinality $|\widehat{X}|$ decreases as $r$ increases and results in a reconstruction with less fidelity than the original signal $\overrightarrow{X}$.
+Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered sequence of $n \in 2^J, J \in \mathbb{N}$ numbers. After decomposing $\overrightarrow{X}$ at a resolution $r$, the coefficients associated to the $r$ level can be represented as a series $\{A_r,D_r,D_{r-1},...,D_2,D_1\}$. The first element $A_r$ is the approximation coefficients array, and the subsequent elements $D_r,D_{r-1},...,D_2,D_1$ are the details coefficients arrays. In this project we use the vector $\widehat{X} = \{A_r,D_r\}$ at specific levels $r \in \{2,4,6,8,10\}$ as feature vectors for the clustering of a set of time series. The cardinality $|\widehat{X}|$ decreases as $r$ increases and results in a reconstruction with less fidelity than the original signal $\overrightarrow{X}$. 
 
 
 \section{Experimental evaluation}
