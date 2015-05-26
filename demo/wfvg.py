@@ -30,6 +30,7 @@ def generate_feature_vectors(TS):
 		TSsse[TSname] = []
 
 		# Level 2
+		# print len(cL2), len(cL4), len(cL6), len(cL8), len(cL10)
 		c = [cL2[0],cL2[1]]
 		for i in range(2,len(cL2)):
 			c.append([0]*len(cL2[i]))

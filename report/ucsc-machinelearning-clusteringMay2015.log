@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 MAY 2015 21:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  25 MAY 2015 22:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -75,6 +75,17 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen105
 \Gin@req@width=\dimen106
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (./ucsc-machinelearning-clusteringMay2015.aux
 
 LaTeX Warning: Label `silhouette_levels' multiply defined.
@@ -82,18 +93,18 @@ LaTeX Warning: Label `silhouette_levels' multiply defined.
 )
 \openout1 = `ucsc-machinelearning-clusteringMay2015.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
  (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count92
@@ -101,12 +112,12 @@ LaTeX Font Info:    ... okay on input line 7.
 \scratchbox=\box26
 \nofMPsegments=\count93
 \nofMParguments=\count94
-\everyMPshowfont=\toks15
+\everyMPshowfont=\toks16
 \MPscratchCnt=\count95
 \MPscratchDim=\dimen108
 \MPnumerator=\count96
 \makeMPintoPDFobject=\count97
-\everyMPtoPDFconversion=\toks16
+\everyMPtoPDFconversion=\toks17
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -155,21 +166,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 8.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 8.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 8.
+LaTeX Font Info:    Try loading font information for U+msa on input line 9.
 
-Overfull \hbox (10.2409pt too wide) in paragraph at lines 8--8
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 9.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Overfull \hbox (10.2409pt too wide) in paragraph at lines 9--9
  [][] 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 17.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 17.
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -180,7 +190,7 @@ File: ../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf Graphic
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=2).pdf used on input line 51.
+evel=2).pdf used on input line 52.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf, id=15, 578.
@@ -190,7 +200,7 @@ File: ../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf Graphic
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=4).pdf used on input line 52.
+evel=4).pdf used on input line 53.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf, id=16, 578.
@@ -200,7 +210,7 @@ File: ../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf Graphic
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=6).pdf used on input line 53.
+evel=6).pdf used on input line 54.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf, id=17, 578.
@@ -210,84 +220,84 @@ File: ../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf Graphic
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=8).pdf used on input line 54.
+evel=8).pdf used on input line 55.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 [2]
-<../task4/silhouette_score_plot_per_level_(clusters=2).pdf, id=21, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=2).pdf, id=26, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=2).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=2).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=2).
-pdf used on input line 62.
+pdf used on input line 63.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=3).pdf, id=22, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=3).pdf, id=27, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=3).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=3).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=3).
-pdf used on input line 63.
+pdf used on input line 64.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=4).pdf, id=23, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=4).pdf, id=28, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=4).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=4).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=4).
-pdf used on input line 64.
+pdf used on input line 65.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=5).pdf, id=24, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=5).pdf, id=29, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=5).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=5).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=5).
-pdf used on input line 65.
+pdf used on input line 66.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=6).pdf, id=25, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=6).pdf, id=30, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=6).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=6).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=6).
-pdf used on input line 66.
+pdf used on input line 67.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=7).pdf, id=26, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=7).pdf, id=31, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=7).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=7).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=7).
-pdf used on input line 67.
+pdf used on input line 68.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=8).pdf, id=27, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=8).pdf, id=32, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=8).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=8).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=8).
-pdf used on input line 68.
+pdf used on input line 69.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_level_(clusters=9).pdf, id=28, 578.16pt x 4
+<../task4/silhouette_score_plot_per_level_(clusters=9).pdf, id=33, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=9).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=9).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=9).
-pdf used on input line 69.
+pdf used on input line 70.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 
-LaTeX Warning: Float too large for page by 66.03036pt on input line 72.
+LaTeX Warning: Float too large for page by 66.03036pt on input line 73.
 
 [3 <../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf> <../task
 4/silhouette_score_plot_per_number_of_cluster(level=4).pdf
@@ -347,28 +357,33 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1722 strings out of 493117
- 27765 string characters out of 6135433
- 83998 words of memory out of 5000000
- 5175 multiletter control sequences out of 15000+600000
- 8548 words of font info for 30 fonts, out of 8000000 for 9000
+ 2023 strings out of 493117
+ 31114 string characters out of 6135433
+ 85510 words of memory out of 5000000
+ 5455 multiletter control sequences out of 15000+600000
+ 12156 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,24p,686b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,26p,827b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on ucsc-machinelearning-clusteringMay2015.pdf (5 pages, 293006 b
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
+2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on ucsc-machinelearning-clusteringMay2015.pdf (5 pages, 328714 b
 ytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 655 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

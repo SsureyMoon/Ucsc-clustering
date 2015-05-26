@@ -10,7 +10,7 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
 import pickle
 
-download = True
+download = False
 
 if __name__ == '__main__':
     TS = {}
