@@ -37,10 +37,20 @@ Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered seque
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Evaluation criteria}
+There is no explicit way to evaluate the quality of these time-series clustering systems, since it is of unsupervised learning. In supervised learning data set contains true classes of all data points, and they are used to calculate SSE(Sum of Square Errors) to evaluate the quality of the implementation. In contrast, evaluation of clustering implementation on unsupervised learning data set need another approach to internally calculate the quality of derived clusters. The most popular method is to get cohesion and separation. Cohesion means how close each node in a cluster $\sum_{i} \sum_{j} (x_{i,j}-m_j)^2$ where $i$ is number of clusters, $x_{i,j}$ is a $j_{th}$ node in the cluster $i$, and $m_{i}$ is the center of the cluster $i$. On the other hand, separation means how far each cluster is from others, $\sum_{k} \sum_{i} (m_{k}-m_{i})^2$. The higher those values are, the better nodes are clustered.
+Silhouette coefficient takes both concepts of cohesion and separation:\\
+\begin{equation}
+s = \begin{cases}
+1-a/b  \,\,\,\, \mbox{for $a \le b$}  ,\,\,
+b/a-1  \,\,\,\, \mbox{otherwise}
+\end{cases}
+\end{equation}
+where $a$ is the average distance $x_{i}$, a random node in the cluster $i$, and other nodes in the cluster, $b$ is the minimum value the average distances of $x_{i}$ and nodes in another cluster $k$. The closer to one the value is, the better nodes are clustered.
+In this project we use Silhouette coefficient to measure the performance of our implementation. There are a few parameters to consider, such as clustering algorithm, level of complexity, in other words, feature extraction level, and a forced number of clusters. Silhouette score plots point which combination of parameters performs better on different type of time-series data sets.
 
 \subsection{Data description}
 
-\subsubsection{Stock closing prices}
+\subsubsection{Stock closing pricees}
 \subsubsection{Historic exchange rates}
 \subsubsection{Historic earthquake data}
 
