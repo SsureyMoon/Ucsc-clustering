@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  26 MAY 2015 09:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  27 MAY 2015 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,54 +183,54 @@ Overfull \hbox (10.2409pt too wide) in paragraph at lines 9--9
 [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf, id=14, 578.
+[2]
+<../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf, id=22, 578.
 16pt x 433.62pt>
 File: ../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf Graphic
  file (type pdf)
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=2).pdf used on input line 52.
+evel=2).pdf used on input line 67.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf, id=15, 578.
+<../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf, id=23, 578.
 16pt x 433.62pt>
 File: ../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf Graphic
  file (type pdf)
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=4).pdf used on input line 53.
+evel=4).pdf used on input line 68.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf, id=16, 578.
+<../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf, id=24, 578.
 16pt x 433.62pt>
 File: ../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf Graphic
  file (type pdf)
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=6).pdf used on input line 54.
+evel=6).pdf used on input line 69.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-<../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf, id=17, 578.
+<../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf, id=25, 578.
 16pt x 433.62pt>
 File: ../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf Graphic
  file (type pdf)
 
 <use ../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_number_of_cluster(l
-evel=8).pdf used on input line 55.
+evel=8).pdf used on input line 70.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
-[2]
 <../task4/silhouette_score_plot_per_level_(clusters=2).pdf, id=26, 578.16pt x 4
 33.62pt>
 File: ../task4/silhouette_score_plot_per_level_(clusters=2).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=2).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=2).
-pdf used on input line 63.
+pdf used on input line 78.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=3).pdf, id=27, 578.16pt x 4
@@ -239,7 +239,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=3).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=3).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=3).
-pdf used on input line 64.
+pdf used on input line 79.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=4).pdf, id=28, 578.16pt x 4
@@ -248,7 +248,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=4).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=4).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=4).
-pdf used on input line 65.
+pdf used on input line 80.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=5).pdf, id=29, 578.16pt x 4
@@ -257,7 +257,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=5).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=5).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=5).
-pdf used on input line 66.
+pdf used on input line 81.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=6).pdf, id=30, 578.16pt x 4
@@ -266,7 +266,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=6).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=6).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=6).
-pdf used on input line 67.
+pdf used on input line 82.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=7).pdf, id=31, 578.16pt x 4
@@ -275,7 +275,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=7).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=7).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=7).
-pdf used on input line 68.
+pdf used on input line 83.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=8).pdf, id=32, 578.16pt x 4
@@ -284,7 +284,7 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=8).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=8).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=8).
-pdf used on input line 69.
+pdf used on input line 84.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 <../task4/silhouette_score_plot_per_level_(clusters=9).pdf, id=33, 578.16pt x 4
@@ -293,14 +293,14 @@ File: ../task4/silhouette_score_plot_per_level_(clusters=9).pdf Graphic file (t
 ype pdf)
  <use ../task4/silhouette_score_plot_per_level_(clusters=9).pdf>
 Package pdftex.def Info: ../task4/silhouette_score_plot_per_level_(clusters=9).
-pdf used on input line 70.
+pdf used on input line 85.
 (pdftex.def)             Requested size: 169.0519pt x 126.78537pt.
 
 
-LaTeX Warning: Float too large for page by 66.03036pt on input line 73.
+LaTeX Warning: Float too large for page by 66.03036pt on input line 88.
 
-[3 <../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf> <../task
-4/silhouette_score_plot_per_number_of_cluster(level=4).pdf
+[3] [4 <../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf> <../
+task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf
 
 pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_number_of_clu
 ster(level=4).pdf): PDF inclusion: multiple pdfs with page group included in a 
@@ -315,7 +315,7 @@ single page
 pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_number_of_clu
 ster(level=8).pdf): PDF inclusion: multiple pdfs with page group included in a 
 single page
->] [4 <../task4/silhouette_score_plot_per_level_(clusters=2).pdf> <../task4/sil
+>] [5 <../task4/silhouette_score_plot_per_level_(clusters=2).pdf> <../task4/sil
 houette_score_plot_per_level_(clusters=3).pdf
 
 pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
@@ -351,19 +351,19 @@ age
 pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
 rs=9).pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
->] [5] (./ucsc-machinelearning-clusteringMay2015.aux)
+>] [6] (./ucsc-machinelearning-clusteringMay2015.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2023 strings out of 493117
- 31114 string characters out of 6135433
- 85510 words of memory out of 5000000
- 5455 multiletter control sequences out of 15000+600000
+ 2024 strings out of 493117
+ 31121 string characters out of 6135433
+ 85513 words of memory out of 5000000
+ 5456 multiletter control sequences out of 15000+600000
  12156 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,26p,827b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,12n,26p,991b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -379,11 +379,11 @@ ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 014/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ucsc-machinelearning-clusteringMay2015.pdf (5 pages, 328629 b
+Output written on ucsc-machinelearning-clusteringMay2015.pdf (6 pages, 331920 b
 ytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
+ 658 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

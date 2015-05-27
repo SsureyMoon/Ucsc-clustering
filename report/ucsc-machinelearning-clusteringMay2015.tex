@@ -29,20 +29,35 @@ Early work on wavelets originated with Morlet in the 1980s as a new tool for sei
 
 \section{Wavelet-based feature extraction}
 
-Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered sequence of $n \in 2^J, J \in \mathbb{N}$ numbers. After decomposing $\overrightarrow{X}$ at a resolution $r$, the coefficients associated to the $r$ level can be represented as a series $\{A_r,D_r,D_{r-1},...,D_2,D_1\}$. The first element $A_r$ is the approximation coefficients array, and the subsequent elements $D_r,D_{r-1},...,D_2,D_1$ are the details coefficients arrays. In this project we use the vector $\widehat{X} = \{A_r,D_r\}$ at specific levels $r \in \{2,4,6,8,10\}$ as feature vectors for the clustering of a set of time series. The cardinality $|\widehat{X}|$ decreases as $r$ increases and results in a reconstruction with less fidelity than the original signal $\overrightarrow{X}$. 
+Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered sequence of $n \in 2^J, J \in \mathbb{N}$ numbers. After decomposing $\overrightarrow{X}$ at a resolution $r \in \{2,4,6,8,10, ...\}$, the coefficients associated to the $r$ level can be represented as a sequence $\{A_r,D_r,D_{r-1},...,D_2,D_1\}$. The first element $A_r$ is the approximation coefficients array, and the subsequent elements $D_r,D_{r-1},...,D_2,D_1$ are the details coefficients arrays. In this project we use the vector $\widehat{X} = \{A_r,D_r\}$ at specific levels $r \in \{2,4,6,8,10\}$ as feature vectors for the clustering of a set of time series. The cardinality $|\widehat{X}|$ decreases as $r$ increases. It results, on one hand, in a reconstruction with less fidelity than the original signal $\overrightarrow{X}$ and, on the other hand, on clusterings of potentially better quality because of the smaller dimensionality of $\widehat{X}$.
 
 
 \section{Experimental evaluation}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The purpose of the experimental evaluation of the generic framework for clustering of time series is to assess the relative efficiency of the framework on a set of contrasting application domains ranging from financial markets to geological phenomena. Variations in the cardinality $|\widehat{X}|$ of feature vectors, the choosen clustering algorithm, as well as the number of clusters, are considered to assess what combination of algorithm and input parameters is the most appropriate for specific situations.
 
 \subsection{Evaluation criteria}
+The three main criteria used to evaluate clusters are \cite{TSK05}:
+
+\begin{description}
+\item[External.] Measure the extent to which cluster labels match externally supplied labels.
+\item[Internal.] Measure the goodness of a clustering without respect to external information.
+\item[Relative.] Compare two different clusterings.
+\end{description}
+
+We evaluate our clustering framework using an internal criterion known as silhouette coefficient. The coefficient is defined as $S = 1-a/b$, where $a$ is a measure of cohesion -how closely related are objects in a cluster-, and $b$ is a measure of separation -how distinct a cluster is from other clusters-. The value of $S$ is typically in $[0,1]$. A clustering with a silhouette coefficient close to $1$ is deemed better than a clustering with a silhouette coefficient close to $0$.
+
 
 \subsection{Data description}
 
 \subsubsection{Stock closing prices}
+This data set consists of the time series of daily closing prices for one hundred stocks from diverse industries (Internet, telecommunications equipment and service providers, entertainment, media, airlines, etc.) between April 20th 2011 and May 16th 2015. The time series represent 1024 trading days, and are normalized using as basis the closing price of the first day of the interval (April 20th 2011). 
+
 \subsubsection{Historic exchange rates}
+
+
 \subsubsection{Historic earthquake data}
+
 
 
 \subsection{Performance evaluation}
@@ -81,7 +96,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \bibitem{BGRS99} K. Beyen, J. Goldstein, R. Ramakrishnan, and U. Shaft. When is nearest neighbor meaningful? In {\em Proceedings of the 7th International Conference on Database Theory}, pp. 217-235, 1999.
 
-\bibitem{ZHZL06} H. Zhang, T. B. Ho, Y. Zhang, M.-S. Lin. Unsupervised Feature Extraction for Time Series Clustering Using Orthogonal Wavelet Transform In {\em Informatica}, Volume 30, pp. 305-319, 2006.
+\bibitem{ZHZL06} H. Zhang, T. B. Ho, Y. Zhang, M.-S. Lin. Unsupervised Feature Extraction for Time Series Clustering Using Orthogonal Wavelet Transform. In {\em Informatica}, Volume 30, pp. 305-319, 2006.
 
 \bibitem{C92} C. K. Chui. {\em An Introduction to Wavelets.} Academic Press, San Diego, 1992.
 
@@ -95,6 +110,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \bibitem{BGG98} C. Sidney Burrus, R. A. Gopinath, and H. Guo, {\em Introduction to Wavelets and Wavelet Transforms: A Primer,} Prentice Hall, NJ 1998.
 
+\bibitem{TSK05} P.-N. Tan, M. Steinbach, and V. Kumar. {\em Introduction to Data Mining,} Pearson, First Edition, 2005.
 
 \end{thebibliography}
 
