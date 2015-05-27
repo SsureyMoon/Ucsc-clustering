@@ -2,7 +2,7 @@ from __future__ import division
 import pandas
 import numpy as np
 
-def interploateWithZero(filename='quakes2010_smaller.csv', sep=' ', column_names=['DATE', 'CODE', 'TIMES'], will_write_file=False):
+def interploateWithZero(filename='quakes2010_smaller.csv', start_date='2010-01-01', end_date='2010-12-31', sep=' ', column_names=['DATE', 'CODE', 'TIMES'], will_write_file=False):
     data = pandas.read_table(filename, sep, names=column_names)
     date_dataframe = data.set_index('DATE')
     date_dataframe.index = pandas.to_datetime(date_dataframe.index)
@@ -10,8 +10,8 @@ def interploateWithZero(filename='quakes2010_smaller.csv', sep=' ', column_names
     del data
     code_set =  set(date_dataframe['CODE'])
 
-    start_date = '2010-01-01'
-    end_date = '2010-12-31'
+    start_date = start_date
+    end_date = end_date
     range_for_data = pandas.date_range(start_date, end_date)
 
     df_zero = pandas.DataFrame(columns=['CODE', 'TIMES'])
@@ -34,4 +34,4 @@ def interploateWithZero(filename='quakes2010_smaller.csv', sep=' ', column_names
     return  df_total
 
 
-print interploateWithZero('quakes2010_smaller.csv', ' ', ['DATE', 'CODE', 'TIMES'], True)
+print interploateWithZero('quakes2010_smaller.csv', '2010-01-01', '2010-12-31', ' ', ['DATE', 'CODE', 'TIMES'], True)
