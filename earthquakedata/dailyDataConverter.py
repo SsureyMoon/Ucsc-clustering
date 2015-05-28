@@ -34,4 +34,4 @@ def interploateWithZero(filename='quakes2010_smaller.csv', start_date='2010-01-0
     return  df_total
 
 
-print interploateWithZero('quakes2010_smaller.csv', '2010-01-01', '2010-12-31', ' ', ['DATE', 'CODE', 'TIMES'], True)
+#print interploateWithZero('quakes2010_smaller.csv', '2010-01-01', '2010-12-31', ' ', ['DATE', 'CODE', 'TIMES'], True)
