@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  27 MAY 2015 02:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  27 MAY 2015 09:00
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **ucsc-machinelearning-clusteringMay2015.tex
 (./ucsc-machinelearning-clusteringMay2015.tex
@@ -308,55 +307,55 @@ LaTeX Warning: Float too large for page by 66.03036pt on input line 100.
 [4 <../task4/silhouette_score_plot_per_number_of_cluster(level=2).pdf> <../task
 4/silhouette_score_plot_per_number_of_cluster(level=4).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_n
-umber_of_cluster(level=4).pdf): PDF inclusion: multiple pdfs with page group in
-cluded in a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_number_of_clu
+ster(level=4).pdf): PDF inclusion: multiple pdfs with page group included in a 
+single page
 > <../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_n
-umber_of_cluster(level=6).pdf): PDF inclusion: multiple pdfs with page group in
-cluded in a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_number_of_clu
+ster(level=6).pdf): PDF inclusion: multiple pdfs with page group included in a 
+single page
 > <../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_n
-umber_of_cluster(level=8).pdf): PDF inclusion: multiple pdfs with page group in
-cluded in a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_number_of_clu
+ster(level=8).pdf): PDF inclusion: multiple pdfs with page group included in a 
+single page
 >] [5 <../task4/silhouette_score_plot_per_level_(clusters=2).pdf> <../task4/sil
 houette_score_plot_per_level_(clusters=3).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=3).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=3).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=4).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=4).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=4).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=5).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=5).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=5).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=6).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=6).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=6).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=7).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=7).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=7).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=8).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=8).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=8).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 > <../task4/silhouette_score_plot_per_level_(clusters=9).pdf
 
-pdfTeX warning: /usr/texbin/pdflatex (file ../task4/silhouette_score_plot_per_l
-evel_(clusters=9).pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
+pdfTeX warning: pdflatex (file ../task4/silhouette_score_plot_per_level_(cluste
+rs=9).pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
 >] [6] (./ucsc-machinelearning-clusteringMay2015.aux)
 
 LaTeX Warning: There were multiply-defined labels.
