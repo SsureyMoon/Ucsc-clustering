@@ -197,13 +197,13 @@ if __name__ == '__main__':
             plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
 
         plt.title('level='+str(le))
-        plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1, prop={'size':3})
+        plt.legend(loc=0, prop={'size':6})
         plt.ylabel('silhouette_score')
         plt.xlabel('number_of_cluster')
         plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')
 
 
-    '''plt.figure(figsize=(len(clustering_names) * 2 + 3, 9.5))
+    plt.figure(figsize=(len(clustering_names) * 2 + 3, 9.5))
     plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
                         hspace=.01)
     plot_num = 1
@@ -224,11 +224,11 @@ if __name__ == '__main__':
             plt.xticks(())
             plt.yticks(())
             plot_num += 1
-    plt.savefig('CompleteGrid.pdf',edgecolor='b', format='pdf')'''
+    plt.savefig('CompleteGrid.pdf',edgecolor='b', format='pdf')
 
 
     #scatter!
-    '''for le in level_list:
+    for le in level_list:
         plt.figure()
         plt.hold(True)
         plt.axis([1.5, 10.5, -0.1, 0.9])
@@ -246,4 +246,4 @@ if __name__ == '__main__':
         plt.legend(bbox_to_anchor=(1.1, 1.1),loc=1)
         plt.ylabel('silhouette_score')
         plt.xlabel('number_of_cluster')
-        plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')'''
+        plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')
