@@ -33,6 +33,7 @@ Consider a time series $\overrightarrow{X} \in \mathbb{R}^n$ as an ordered seque
 
 
 \section{Experimental evaluation}
+\label{ExperimentalEvaluation}
 
 The purpose of the experimental evaluation of the generic framework for clustering of time series is to assess the relative efficiency of the framework on a set of contrasting application domains ranging from financial markets to geological phenomena. Variations in the cardinality $|\widehat{X}|$ of feature vectors, the choosen clustering algorithm, as well as the number of clusters, are considered to assess what combination of algorithm and input parameters is the most appropriate for specific situations. The following clustering algorithms, implemented in the Scikit Learn python machine learning library \cite{SKL15}, are used in the evaluation:
 
@@ -92,12 +93,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 \subsection{Performance evaluation}
 
+
 \subsection{Stock closing prices}
+
+As an exploratory step, we first applied the clustering algorithms indicated in Section \ref{ExperimentalEvaluation} to the set of time series and plotted the resulting clusters side to side as shown in Figure \ref{ClusterTimeSeries}. This visualization provides insights into what stocks have common patterns and the relative ability of the different algorithms to generate relevant groups. In this case, Affinity Propagation showed the least ability to generate groups. Spectral clustering, on the other hand, achieved a spreading of the time series across multiple groups in such a way that stocks in the same group have a similar pattern.
+
 
 \begin{figure}
 \includegraphics[width=0.99\textwidth]{../demo/CompleteGrid.pdf}
-\caption{Clustering of stock closing price time series with different algorithms and a varying number of clusters using feature extraction (resolution) level four.}
+\caption{Clustering of stock closing price time series with different algorithms
+using feature extraction (resolution) level four.}
+\label{ClusterTimeSeries}
 \end{figure}
+
+Figure \ref{silhouette_levels} shows the impact of the clustering level and the number of clusters on the silhouette coefficient. Generally, the coefficient decreases with the number of clusters. As stocks are broken into more groups, the separation factor $b$ decreases; without a corresponding gain in cohesion $a$, the $1-a/b$ coefficient decreases. On the other hand, the silhouette coefficient is relatively insensitive to the clustering level.
+
+Spectral Clustering, which qualitatively produced relevant clusterings (Figure \ref{ClusterTimeSeries}), has a lower coefficient than Mini-Batch K-Means, Ward and Birch. Only when the number of clusters is greater than six, its coefficient is higher than for agglomerative clustering.
+
 
 \begin{figure}
 \begin{center}
@@ -105,10 +117,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \subfigure[Level 4]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=4).pdf}}
 \subfigure[Level 6]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=6).pdf}}
 \subfigure[Level 8]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_number_of_cluster(level=8).pdf}}
-\caption{Silhouette score for various clustering levels.} \label{silhouette_levels}
+\caption{Silhouette coefficient for various clustering levels.} \label{silhouette_levels}
 \end{center}
 \end{figure}
 
+Figure \ref{silhouette_score} shows again the silhouette coefficient as a function of the clustering level and the number of clusters. As before, the coefficient decreases with the number of clusters, but is relatively insensitive to the clustering level.
 
 \begin{figure}
 \begin{center}
@@ -120,7 +133,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \subfigure[Seven clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=7).pdf}}
 \subfigure[Eight clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=8).pdf}}
 \subfigure[Nine clusters]{\includegraphics[width=0.49\textwidth]{../task4/silhouette_score_plot_per_level_(clusters=9).pdf}}
-\caption{Silhouette score for various clustering levels.} \label{silhouette_score}
+\caption{Silhouette coefficient for various clustering levels.} \label{silhouette_score}
 \end{center}
 \end{figure}
 
@@ -136,7 +149,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 \section{Conclusions}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+This project investigated the use of wavelet transformations as a feature extraction mechanism for the clustering of time series. A framework to evaluate the concept was developed and tested on three different time series data sets: closing prices for stocks, currency exchange rates, and earthquake data.
+
+The results of the experimental evaluation suggest that {\em both} a qualitative assessment as well as the evaluation of a number of measurements, such as the silhouette coefficient, are necessary to understand the data set and the particular combination of parameters for which a clustering algorithm offers the best performance. A premise of the project was that wavelet transformation as a feature extraction mechanism could potentially result in better clusterings. However, the results show that the silhouette coefficient is relatively insensitive to the degree of dimensionality reduction provided by the transformation (clustering level). As part of a process to improve tue quality of the clusterings, compementary performance measurements would need to be included in the evaluation.
+
 
 \appendix
 \section*{Appendix A: Stock symbols}
