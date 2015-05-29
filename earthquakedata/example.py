@@ -4,25 +4,12 @@ sys.path.insert(0, '../')
 from demo.wfvg import generate_feature_vectors
 from task4.evalPerformace import get_silhouette_score
 
-
-
-import datetime
-
-import pickle
-import matplotlib.pyplot as plt
-import pywt
 import numpy as np
-from sklearn import preprocessing, cluster
-from sklearn.cluster import KMeans, DBSCAN
-from sklearn.neighbors import kneighbors_graph
-from sklearn import metrics
 
 
 output_dir = 'output_plot/'
 
-
 TS ={}
-
 
 with open('quakes/quakes2010-2014.csv') as file:
     for line in file.readlines():
@@ -37,8 +24,6 @@ with open('quakes/quakes2010-2014.csv') as file:
 TSpct = {}
 for key in TS:
     TSpct[key] = TS[key][len(TS[key])-1024:len(TS[key])]
-print len(TSpct['E26'])
-
 
 TSwfv,TSsse,TSrec = generate_feature_vectors(TSpct)
 
@@ -54,8 +39,9 @@ for al in clustering_names:
     score_dict[al] = []'''
 
 #example
-score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)
-score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 50)
+score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)['score']
+ds = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 50)['ds']
+
 
 colors = ['b', 'r', 'k', 'g', 'c', 'm', 'y']
 #getting score dict according to level of feature extraction
