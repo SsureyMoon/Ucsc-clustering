@@ -52,6 +52,7 @@ def get_silhouette_score(algorithm_name, dataX, level=4, number_of_cluster=8):
 
     dataset_for_cluster = [ dataX[k][index] for k,v in dataX.iteritems() ]
     datasetnames = [k for k,v in dataX.iteritems()]
+
     #min_max_scaler = preprocessing.MinMaxScaler()
     #min_max_scaler.fit_transform(dataset_for_cluster)
     #scaled_dataset = preprocessing.normalize(dataset_for_cluster)
@@ -88,9 +89,10 @@ def get_silhouette_score(algorithm_name, dataX, level=4, number_of_cluster=8):
     if len(set(algorithm.labels_)) > 1 and len(set(algorithm.labels_))<len(algorithm.labels_):
         score = metrics.silhouette_score(X, algorithm.labels_, metric='euclidean')
     else:
-        score = 0
+        score = 0.00
 
-    return score
+    return {'score': score, 'ds':ds}
+
 
 
 
@@ -154,7 +156,7 @@ if __name__ == '__main__':
         score_dict[al] = []'''
 
     #example
-    score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)
+    result = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)
 
 
 
@@ -170,7 +172,7 @@ if __name__ == '__main__':
         for enum, name in enumerate(clustering_names):
             score_list = []
             for level in level_list:
-                 score_list.append(get_silhouette_score(name, TSwfv, level, number))
+                 score_list.append(get_silhouette_score(name, TSwfv, level, number)['score'])
             plt.plot(level_list, score_list, colors[enum], label=name)
             plt.plot(level_list, score_list, colors[enum]+'o')
 
@@ -192,7 +194,7 @@ if __name__ == '__main__':
         for enum, name in enumerate(clustering_names):
             score_list = []
             for number in number_of_cluster_list:
-                score_list.append(get_silhouette_score(name, TSwfv, le, number))
+                score_list.append(get_silhouette_score(name, TSwfv, le, number)['score'])
             plt.plot(number_of_cluster_list, score_list, colors[enum], label=name)
             plt.plot(number_of_cluster_list, score_list, colors[enum]+'o')
 
@@ -201,31 +203,6 @@ if __name__ == '__main__':
         plt.ylabel('silhouette_score')
         plt.xlabel('number_of_cluster')
         plt.savefig('silhouette_score_plot_per_number_of_cluster(level='+str(le)+').pdf',edgecolor='b', format='pdf')
-
-
-    plt.figure(figsize=(len(clustering_names) * 2 + 3, 9.5))
-    plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
-                        hspace=.01)
-    plot_num = 1
-    col = 0
-    for name, algorithm in zip(clustering_names, clustering_algorithms):
-        col += 1
-        ds = dict(zip(datasetnames, algorithm.labels_))
-        # plot
-        row = 0
-        for i in range(0,8):
-            row += 1
-            plt.subplot(8,len(clustering_algorithms),(row-1)*len(clustering_algorithms)+col)
-            if i == 0:
-                plt.title(name,size=8)
-            for k in [key for key,val in ds.iteritems() if ds[key]==i]:
-                plt.plot(TSrec[k][1],label=k+' L4 ',hold=True)
-            plt.legend(prop={'size':4},loc=0)
-            plt.xticks(())
-            plt.yticks(())
-            plot_num += 1
-    plt.savefig('CompleteGrid.pdf',edgecolor='b', format='pdf')
-
 
     #scatter!
     for le in level_list:
