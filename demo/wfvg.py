@@ -65,14 +65,29 @@ def generate_feature_vectors(TS):
 		TSrec[TSname] = [TSrecL2,TSrecL4,TSrecL6,TSrecL8]
 
 		# Plotting
-		# fig = plt.figure()
-		# ax = fig.add_subplot(111)
-		# ax.plot(TS[TSname],label=TSname)
-		# ax.plot(TSrecL2,label=TSname+' (L2) SSE: '+str(TSsse[TSname][0]))
-		# ax.plot(TSrecL4,label=TSname+' (L4) SSE: '+str(TSsse[TSname][1]))
-		# ax.plot(TSrecL6,label=TSname+' (L6) SSE: '+str(TSsse[TSname][2]))
-		# ax.plot(TSrecL8,label=TSname+' (L8) SSE: '+str(TSsse[TSname][3]))
-		# plt.legend(prop={'size':6},loc=0)
-		# plt.savefig(TSname+'.pdf',edgecolor='b', format='pdf')
+		if TSname == 'TS.AMZN':
+			print [len(x) for x in cL2]
+			print [len(x) for x in cL4]
+			print [len(x) for x in cL6]
+			print [len(x) for x in cL8]
+			lenL2 = str(len(cL2[0])+len(cL2[1]))
+			lenL4 = str(len(cL4[0])+len(cL4[1]))
+			lenL6 = str(len(cL6[0])+len(cL6[1]))
+			lenL8 = str(len(cL8[0])+len(cL8[1]))
+			fig = plt.figure()
+			ax = fig.add_subplot(111)
+			ax.set_xlabel('Time index (1 = 4/20/2011)')
+			ax.set_ylabel('Closing price (normalized)')
+			ax.plot(TS[TSname],label=TSname)
+			LL2 = TSname+' (L2) len: '+lenL2+' SSE: '+'%3.2f'%TSsse[TSname][0]
+			LL4 = TSname+' (L4) len: '+lenL4+' SSE: '+'%3.2f'%TSsse[TSname][1]
+			LL6 = TSname+' (L6) len: '+lenL6+' SSE: '+'%3.2f'%TSsse[TSname][2]
+			LL8 = TSname+' (L8) len: '+lenL8+' SSE: '+'%3.2f'%TSsse[TSname][3]
+			ax.plot(TSrecL2,label=LL2)
+			ax.plot(TSrecL4,label=LL4)
+			ax.plot(TSrecL6,label=LL6)
+			ax.plot(TSrecL8,label=LL8)
+			plt.legend(prop={'size':10},loc=0)
+			plt.savefig(TSname+'.pdf',edgecolor='b', format='pdf')
 
 	return TSwfv,TSsse,TSrec
