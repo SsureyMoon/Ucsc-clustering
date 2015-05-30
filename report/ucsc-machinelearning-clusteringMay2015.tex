@@ -146,7 +146,23 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \subsection{Historic earthquake data}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+\begin{figure}
+\includegraphics[width=0.99\textwidth]{../earthquakedata/output_map_plot/grid(year=2010-2014,level=6,number_of_cluster=7).pdf}
+\caption{Clustering of earthquake frequency per day with different algorithms
+using feature extraction (resolution) level six, number of clusters seven.}
+\label{EarthquakeWorldMap}
+\end{figure}
 
+
+\begin{figure}
+\begin{center}
+\subfigure[Year 2010]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2010,level=6,number_of_cluster=7).pdf}}
+\subfigure[Year 2013]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2013,level=6,number_of_cluster=7).pdf}}
+\caption{Clustering of earthquake frequency per day in 2010 vs. 2014 with K-mean
+using feature extraction (resolution) level six, number of clusters seven.}
+\label{Cluster2010vs.2013}
+\end{center}
+\end{figure}
 
 \section{Conclusions}
 
