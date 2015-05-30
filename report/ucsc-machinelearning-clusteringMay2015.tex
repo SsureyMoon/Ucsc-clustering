@@ -85,10 +85,66 @@ This data set consists of the time series of daily closing prices for one hundre
 This data set consists of the exchange rate time series for thirty pairs of currencies, e.g., JPY/USD, over 1024 days. The time series are normalized using as basis the exchange rate on the first day of the interval. These time series are retrieved from the Federal Reserve Economic Data (FRED) service of the Federal Reserve Bank of St. Louis \cite{FRED15}.
 
 
-\subsubsection{Historic earthquake data}
+\subsection{Historic earthquake data}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{figure}
+\includegraphics[width=0.99\textwidth]{../earthquakedata/output_map_plot/grid(year=2010-2014,level=6,number_of_cluster=7).pdf}
+\caption{Clustering of earthquake frequency per day with different algorithms
+using feature extraction (resolution) level six, number of clusters seven.}
+\label{EarthquakeWorldMap}
+\end{figure}
 
+\begin{figure}
+\includegraphics[width=0.99\textwidth]{../earthquakedata/output_map_plot/Tectonic_plates_boundaries.png}
+\caption{Plate tectonic map of our earth \cite{WTP15}.}
+\label{PlateWorldMap}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\subfigure[Year 2010]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2010,level=6,number_of_cluster=7).pdf}}
+\subfigure[Year 2013]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2013,level=6,number_of_cluster=7).pdf}}
+\caption{Clustering of earthquake frequency per day in 2010 vs. 2014 with K-mean
+using feature extraction (resolution) level six, number of clusters seven.}
+\label{Cluster2010vs.2013}
+\end{center}
+\end{figure}
+
+
+On earthquake frequency dataset, we applied a few clustering algorithm to explore relation between clustering and geological distance. Geologically surface of our earth are consisted of some plates, earthquakes are caused by movements of those plates. Therefore, UTM zones might be classified by whether they are on the same boundary of plates more than by they distance.
+Figure \ref{EarthquakeWorldMap} shows the UTM-zone in each cluster. Points in the same color indicates, those UTM-zones are in the same cluster. \ref{PlateWorldMap} shows tectonic plates of our earth,
+
+Figure \ref{silhouette_levels_eq} shows the impact of the clustering level and the number of clusters on the silhouette coefficient. Generally, the coefficient decreases with the number of clusters. As stocks are broken into more groups, the separation factor $b$ decreases; without a corresponding gain in cohesion $a$, the $1-a/b$ coefficient decreases. On the other hand, the silhouette coefficient is relatively insensitive to the clustering level.
+
+Spectral Clustering, which qualitatively produced relevant clusterings (Figure \ref{ClusterTimeSeries}), has a lower coefficient than Mini-Batch K-Means, Ward and Birch. Only when the number of clusters is greater than six, its coefficient is higher than for agglomerative clustering.
+
+
+\begin{figure}
+\begin{center}
+\subfigure[Level 2]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=2).pdf}}
+\subfigure[Level 4]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=4).pdf}}
+\subfigure[Level 6]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=6).pdf}}
+\subfigure[Level 8]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=8).pdf}}
+\caption{Silhouette coefficient for various clustering levels on earthquake frequency dataset.} \label{silhouette_levels_eq}
+\end{center}
+\end{figure}
+
+Figure \ref{silhouette_score_eq} shows again the silhouette coefficient as a function of the clustering level and the number of clusters. As before, the coefficient decreases with the number of clusters, but is relatively insensitive to the clustering level.
+
+\begin{figure}
+\begin{center}
+\subfigure[Two clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=2).pdf}}
+\subfigure[Three clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=3).pdf}}
+\subfigure[Four clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=4).pdf}}
+\subfigure[Five clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=5).pdf}}
+\subfigure[Six clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=6).pdf}}
+\subfigure[Seven clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=7).pdf}}
+\subfigure[Eight clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=8).pdf}}
+\subfigure[Nine clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=9).pdf}}
+\caption{Silhouette coefficient for various clustering levels on earthquake frequency dataset.} \label{silhouette_score_eq}
+\end{center}
+\end{figure}
 
 
 \subsection{Performance evaluation}
@@ -177,7 +233,6 @@ The results of the experimental evaluation suggest that {\em both} a qualitative
 
 YHOO, GOOGL, AAPL, MSFT, BIDU, IBM, EBAY, ORCL, CSCO, SAP, VZ, T, CMCSA, AMX, QCOM, NOK, AMZN, WMT, COST, TGT, CVX, TOT, BP, XOM, E, COP, APA, GS, MS, BK, CS, SMFG, DB, RY, CS, BCS, SAN, BNPQY, NKE, DECK, PCLN, EMC, INTC, AMD, NVDA, TXN, BRCM, ADI, WFM, TFM, INFN, CIEN, CSC, TMO, BSX, TIVO, DISH, SATS, LORL, ORAN, IMASF, IRDM, HRS, GD, BA, LMT, NOC, RTN, TXT, ERJ, UTX, SPR, BDRBF, AAL, DAL, HA, UAL, LUV, JBLU, ALGT, RJET, RCL, CCL, DIS, CBS, FOXA, QVCA, DWA, VIAB, TM, TWX, DISCA, SNI, MSG, PG, ENR, HRG, SPB, KMB, TSLA.
 
-
 \begin{thebibliography}{1}
 
 \bibitem{BGRS99} K. Beyen, J. Goldstein, R. Ramakrishnan, and U. Shaft. When is nearest neighbor meaningful? In {\em Proceedings of the 7th International Conference on Database Theory}, pp. 217-235, 1999.
@@ -202,8 +257,8 @@ YHOO, GOOGL, AAPL, MSFT, BIDU, IBM, EBAY, ORCL, CSCO, SAP, VZ, T, CMCSA, AMX, QC
 
 \bibitem{SKL15} SciKit Learn {\em http://scikit-learn.org/stable/}. Accessed: May 27th 2015.
 
+\bibitem{WTP15} Wikipedia, Plate tectonics {\em http://en.wikipedia.org/wiki/Plate_tectonics}.
+
 \end{thebibliography}
-
-
 
 \end{document}
