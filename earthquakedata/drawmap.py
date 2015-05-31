@@ -53,9 +53,6 @@ with open('quakes/quakes2010-2014.csv') as file:
             TS[aline[1]] = [int(aline[2]),]
 
 
-
-
-
 if __name__=='__main__':
     print UTM2LL('N1') #-177, 4
     print UTM2LL('F30') #-3, -52
@@ -65,7 +62,18 @@ if __name__=='__main__':
     for key in TS:
         TSpct[key] = TS[key][len(TS[key])-1024:len(TS[key])]
 
+    # get only recent 1024
+    TSpct2010 = {}
+    for key in TS:
+        TSpct2010[key] = TS[key][0:256]
+
+    TSpct2013 = {}
+    for key in TS:
+        TSpct2013[key] = TS[key][(365*3):(365*3+256)]
+
     TSwfv,TSsse,TSrec = generate_feature_vectors(TSpct)
+    (TSwfv2010,a,b) = generate_feature_vectors(TSpct2010)
+    (TSwfv2013,a,b) = generate_feature_vectors(TSpct2013)
 
     np.random.seed(0)
     clustering_names = [
@@ -77,32 +85,80 @@ if __name__=='__main__':
     '''score_dict={}
     for al in clustering_names:
         score_dict[al] = []'''
-
+    applied_algo=['MiniBatchKMeans', 'SpectralClustering', 'Ward', 'Birch']
     #example
     #score = get_silhouette_score('MiniBatchKMeans', TSwfv, 4, 8)['score']
-    level = 6
-    number_of_cluster = 3
-    algorithm = 'MiniBatchKMeans'
-    ds = get_silhouette_score(algorithm, TSwfv, level, number_of_cluster)['ds']
+    plt.figure()
+    for enum, cname in enumerate(applied_algo):
+        level = 6
+        number_of_cluster = 7
+        algorithm = cname
+        ds = get_silhouette_score(algorithm, TSwfv, level, number_of_cluster)['ds']
+        #ds2010 = get_silhouette_score(algorithm, TSwfv2010, level, number_of_cluster)['ds']
+        #ds2013 = get_silhouette_score(algorithm, TSwfv2013, level, number_of_cluster)['ds']
 
-    colors = ['b', 'r', 'k', 'g', 'c']
-    #getting score dict according to level of feature extraction
-    number_of_cluster_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-    level_list = [2, 4, 6, 8, 10]
+        colors = ['b', 'r', 'k', 'g', 'c', 'm', 'y', '0.75']
+        #getting score dict according to level of feature extraction
+        number_of_cluster_list = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        level_list = [2, 4, 6, 8, 10]
 
 
-    m = Basemap(projection='cyl',llcrnrlat=-90,urcrnrlat=90,\
-                llcrnrlon=-180,urcrnrlon=180,resolution='c')
+        plt.subplot(2,2,enum+1)
+        m = Basemap(projection='cyl',llcrnrlat=-90,urcrnrlat=90,\
+                    llcrnrlon=-180,urcrnrlon=180,resolution='c')
 
-    m.fillcontinents(color='gray',lake_color='None')
-    # draw parallels and meridians.
-    m.drawmapboundary(fill_color='aqua')
-    plt.title("Earthquake cluster map")
-    print ds
-    for utm in ds:
-        label = ds[utm]
-        lon, lat = UTM2LL(utm)
-        x,y = m(lon, lat)
-        m.plot(x, y, colors[int(label)]+'o')
+        m.fillcontinents(color='gray',lake_color='None')
+        # draw parallels and meridians.
+        m.drawmapboundary(fill_color='aqua')
 
-    plt.savefig(output_map_dir+algorithm+'(level='+str(level)+',number_of_cluster='+str(number_of_cluster)+').pdf',edgecolor='b', format='pdf')
+        plt.title("2010-2014 "+cname)
+        for utm in ds:
+            label = ds[utm]
+            lon, lat = UTM2LL(utm)
+            x,y = m(lon, lat)
+            m.plot(x, y, colors[int(label)]+'o', markersize=3)
+
+    plt.tight_layout(h_pad=-0.2)
+    plt.savefig(output_map_dir+'grid'+'(year=2010-2014,level='+str(level)+',number_of_cluster='+str(number_of_cluster)+').pdf',edgecolor='b', format='pdf')
+
+
+#plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
+#                        hspace=.01)
+#    (pad=0.1, w_pad=0.1, h_pad=0.1)
+    '''if max(map(int, ds2010.values())) < number_of_cluster:
+        print 'drawing', cname
+        plt.figure()
+        m = Basemap(projection='cyl',llcrnrlat=-90,urcrnrlat=90,\
+                    llcrnrlon=-180,urcrnrlon=180,resolution='c')
+
+        m.fillcontinents(color='gray',lake_color='None')
+        # draw parallels and meridians.
+        m.drawmapboundary(fill_color='aqua')
+
+        plt.title("Earthquake cluster map 2010 using "+cname)
+        for utm in ds2010:
+            label = ds2010[utm]
+            lon, lat = UTM2LL(utm)
+            x,y = m(lon, lat)
+            m.plot(x, y, colors[int(label)]+'o')
+
+
+        plt.savefig(output_map_dir+algorithm+'(year=2010,level='+str(level)+',number_of_cluster='+str(number_of_cluster)+').pdf',edgecolor='b', format='pdf')
+
+
+        plt.figure()
+        m = Basemap(projection='cyl',llcrnrlat=-90,urcrnrlat=90,\
+                    llcrnrlon=-180,urcrnrlon=180,resolution='c')
+
+        m.fillcontinents(color='gray',lake_color='None')
+        # draw parallels and meridians.
+        m.drawmapboundary(fill_color='aqua')
+
+        plt.title("Earthquake cluster map 2013 using "+cname)
+        for utm in ds2013:
+            label = ds2013[utm]
+            lon, lat = UTM2LL(utm)
+            x,y = m(lon, lat)
+            m.plot(x, y, colors[int(label)]+'o')
+
+        plt.savefig(output_map_dir+algorithm+'(year=2013,level='+str(level)+',number_of_cluster='+str(number_of_cluster)+').pdf',edgecolor='b', format='pdf')'''
