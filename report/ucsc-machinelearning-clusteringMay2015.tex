@@ -78,7 +78,7 @@ In this project we use Silhouette coefficient to measure the performance of our 
 
 \subsubsection{Stock closing prices}
 
-This data set consists of the time series of daily closing prices for one hundred stocks from diverse industries (Internet, telecommunications equipment and service providers, entertainment, media, airlines, etc.) between April 20th 2011 and May 16th 2015. The time series represent 1024 trading days, and are normalized using as basis the closing price of the first day of the interval (April 20th 2011). The complete list of stocks used in thi project is given in Appendix A.
+This data set consists of the time series of daily closing prices for one hundred stocks from diverse industries (Internet, telecommunications equipment and service providers, entertainment, media, airlines, etc.) between April 20th 2011 and May 16th 2015. The time series represent 1024 trading days, and are normalized using as basis the closing price of the first day of the interval (April 20th 2011). The complete list of stocks used in this project is given in Appendix A.
 
 \subsubsection{Historic exchange rates}
 
@@ -86,10 +86,17 @@ This data set consists of the exchange rate time series for thirty pairs of curr
 
 
 \subsubsection{Historic earthquake data}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This data set consists of the time series of frequency of earthquake for a few UTM zones between Jan 2010 to Dec 2014. As Figure \ref{CharacterOfEarthquake} shows, earthquake dataset is very different from stock price or exchange rate dataset, since it is takes number of number of earthquakes a day. Most of time frequency is zero in most UTM zones, it does not contain as rich information as other usual time series data set. We assume that optimal combinations of parameters, which fit this kind of data, may be very different from other data sets, such as stock price or exchange rate. The complete list of stocks used in this project is given in Appendix B.
+
+\begin{figure}
+\includegraphics[width=0.99\textwidth]{../earthquakedata/output_plot/eq_ts_char.png}
+\caption{Earthquake frequency in randomly sampled UTM zones in (2010-2014)}
+\label{CharacterOfEarthquake}
+\end{figure}
+
+
 
 \subsection{Performance evaluation}
-
 
 \subsection{Stock closing prices}
 
@@ -212,6 +219,11 @@ The results of the experimental evaluation suggest that {\em both} a qualitative
 
 YHOO, GOOGL, AAPL, MSFT, BIDU, IBM, EBAY, ORCL, CSCO, SAP, VZ, T, CMCSA, AMX, QCOM, NOK, AMZN, WMT, COST, TGT, CVX, TOT, BP, XOM, E, COP, APA, GS, MS, BK, CS, SMFG, DB, RY, CS, BCS, SAN, BNPQY, NKE, DECK, PCLN, EMC, INTC, AMD, NVDA, TXN, BRCM, ADI, WFM, TFM, INFN, CIEN, CSC, TMO, BSX, TIVO, DISH, SATS, LORL, ORAN, IMASF, IRDM, HRS, GD, BA, LMT, NOC, RTN, TXT, ERJ, UTX, SPR, BDRBF, AAL, DAL, HA, UAL, LUV, JBLU, ALGT, RJET, RCL, CCL, DIS, CBS, FOXA, QVCA, DWA, VIAB, TM, TWX, DISCA, SNI, MSG, PG, ENR, HRG, SPB, KMB, TSLA.
 
+\section*{Appendix B: Earthquake UTM zones}
+\label{AppB}
+
+C5-6, C8, C58, D1-2, D16, D41, D49, D53, D58, D59, D60, E10, E19, E20-29, E3-7, E38, E55-59, F10-18, F2, F20-36, F42-43, F47-49, F5, F50-58, F6-9, F60, G12-19, G21, G27-29, G36-38, G43-48, G51-52, G55-56, G58-60, H1, H11-15, H18-20, H24, H28-29, H34, H37-40, H43-44, H48-49, H51, H53-56, H59-60, J1-3,  J7, J11-12, J17-20, J28-29, J33-37, J40-45, J49, J51-54, J56, J58-60, K1-2,  K6, K11-12, K18-20, K23-24, K28-29, K33, K35-39, K41-42, K44-45, K47, K49-53, K55, K57-60, L1-3, L9, L12-15, L1720, L22, L28-30, L33-39, L41-42, L45-53, L55-60,  M10, M12-15, M17-20, M22, M25-30, M32, M34-37, M39, M42-57, N10, N13-19, N22, N24-26, N28, N34-37, N40-47, N49-53, N55, P12-24, P26-29, P37-40, P45-56, Q4-5, Q10-21, Q23, Q26, Q28-29, Q31, Q37-39, Q41-52, Q54-55, R11-16, R18-20, R23-24, R27, R29, R35-36, R38-49, R5, R8, R50-60, S9-20, S24-55,  T9-39, T41-57, U1-14, U17, U19-20, U22, U25-26, U29-34, U36, U41, U43-52, U54-60, V1-8, V10, V20-21, V23, V25-27, V30-33, V35, V40-42, V47, V49-52, V55-60, V7-9, W1-10, W15-16, W18-22, W25, W27-34, W41, W51-52, W54-55, W59, X5, X9-12, X14-18, X21, X25-27, X29-31, X33, X41, X49-53
+
 \begin{thebibliography}{1}
 
 \bibitem{BGRS99} K. Beyen, J. Goldstein, R. Ramakrishnan, and U. Shaft. When is nearest neighbor meaningful? In {\em Proceedings of the 7th International Conference on Database Theory}, pp. 217-235, 1999.
@@ -235,6 +247,8 @@ YHOO, GOOGL, AAPL, MSFT, BIDU, IBM, EBAY, ORCL, CSCO, SAP, VZ, T, CMCSA, AMX, QC
 \bibitem{FRED15} Federal Reserve Economic Data (FRED) service, {\em https://research.stlouisfed.org/fred2/}. Accessed: May 27th 2015.
 
 \bibitem{SKL15} SciKit Learn {\em http://scikit-learn.org/stable/}. Accessed: May 27th 2015.
+
+\bibitem{WTP15} Wikipedia Tectonics {\em http://en.wikipedia.org/Plate\_tectonics/}.
 
 \end{thebibliography}
 
