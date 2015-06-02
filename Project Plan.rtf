@@ -1,0 +1,642 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red191\green191\blue191;\red205\green205\blue205;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+{\info
+{\author Kathy Norman}}\margl1440\margr1440\vieww27120\viewh13020\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 \
+\
+\
+\cf2 Project Proposal for 30164:(003), Machine Learning and Data Mining: Clustering Methods\
+\
+Team: Felix Huang, Josue Kuri, Surray Moon, Kathy Norman\
+\
+\pard\pardeftab720
+\cf2 Title: Clustering of Time Series using Wavelet Transformations as a Feature Extraction Mechanism\
+\
+Project Plan\
+\
+References:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0\cf2 {\listtext	1	}H. Zhang, T. B. Ho, Y. Zhang, M. Lin, "Unsupervised Feature Extraction for Time Series Clustering Using Orthogonal Wavelet Transform," Informatica 30, pp 305-319, 2006.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240
+\ls1\ilvl0\cf2 {\listtext	2	}Yuqing Dai, Yuning Zhang, \'93Machine Learning in Stock Price Trend Forecasting\'94, http://cs229.stanford.edu/proj2013/DaiZhang-MachineLearningInStockPriceTrendForecasting.pdf\
+\pard\pardeftab720\sa240
+\cf2 \
+Tasks, Task Assignments, Schedule, and Tracking\
+\pard\pardeftab720\sa240
+
+\f1\fs32 \cf2 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clmgf \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx2160
+\clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx4320
+\clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx6480
+\clmrg \clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrs\brdrw20\brdrcf3 \clbrdrb\brdrs\brdrw20\brdrcf3 \clbrdrr\brdrs\brdrw20\brdrcf3 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa240
+\cf2 \cell 
+\pard\intbl\itap1\cell 
+\pard\intbl\itap1\cell 
+\pard\intbl\itap1\cell \lastrow\row
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf2 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1335\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Task #
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Task
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Task Dependency
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Task Assignment
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Schedule (Completed)
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural\qc
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Tracking
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight820 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+1
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Project Plan
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix, Josue, Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 18, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 13, 14, 16, 18
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight820 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+2
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+generate feature vectors
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Josue
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 18, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 15
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1580 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+3
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Build functionality to measure SSE between original TS and feaster vectors
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+completion of task 3
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Josue
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 21, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 15, 18
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1200 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+4
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Build functionality to cluster feature vectors
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+require output details of task 3
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 22, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 19
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1580 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1520 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+5
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Build functionality to measure effectiveness of clustering
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+require output details of task 4
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 25, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 19, 22
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1440 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+6
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Collect & summarize  Stock data
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+
+\f2\fs20 \cf2 \expnd0\expndtw0\kerning0
+??
+\f1\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Preliminary: May 22\
+Final: May 27
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 18, 20, 22, 25
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1440 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+7
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+ Collect & summarize Currency data
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural
+
+\f2\fs20 \cf2 \expnd0\expndtw0\kerning0
+??
+\f1\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Preliminary: May 22\
+Final: May 27
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 18, 20, 22, 25, 27
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1440 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+8
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Collect & summarize Earthquake data
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Preliminary: May 22\
+Final: May 27
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 18, 20, 22, 25, 27
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1440 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1380 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+9
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Execute trail runs with collected data
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+completion of task 2,3,4 & 6/7/8
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix, Josue, Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Preliminary: May 22\
+Final: May 27
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 18, 20, 22, 25, 27
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight820 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight760 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+10
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Discuss and calibrate runs
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+completion of task 9
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix, Josue, Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 25, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 18, 20, 22, 25, 27
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1960 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1900 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1900 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1900 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1900 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1900 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+11
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Finalize slides for each person\'92s participation. Assume 5 mins pres/person
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+completion of task 10
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix, Josue, Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+May 30, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+update team May 25, 27, 30
+\fs24 \kerning1\expnd0\expndtw0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat1 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth1355\clftsWidth3 \clheight1200 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt20 \clpadl40 \clpadb20 \clpadr40 \gaph\cellx1440
+\clvertalt \clshdrawnil \clwWidth2715\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth2193\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2581\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx7200
+\clvertalt \clshdrawnil \clwWidth3260\clftsWidth3 \clheight1140 \clbrdrt\brdrs\brdrw5\brdrcf4 \clbrdrl\brdrs\brdrw5\brdrcf4 \clbrdrb\brdrs\brdrw5\brdrcf4 \clbrdrr\brdrs\brdrw5\brdrcf4 \clpadt50 \clpadl50 \clpadb50 \clpadr50 \gaph\cellx8640
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\qc
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+12
+\f1 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Prepare Project Report
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs28 \cf2 June 1 Presentation of Project
+\fs24 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+Felix, Josue, Moon & Kathy
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sa240\pardirnatural
+
+\fs32 \cf2 \expnd0\expndtw0\kerning0
+June 5, 2015
+\fs24 \kerning1\expnd0\expndtw0 \cell 
+\pard\intbl\itap1\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs28 \cf2 update the team June 3,4,5
+\fs24 \cell \lastrow\row
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \
+\pard\pardeftab720\sa240
+
+\fs32 \cf2 \
+\
+Felix\
+\pard\pardeftab720
+
+\f3\fs26 \cf2 \expnd0\expndtw0\kerning0
+1) Good tasks are ones that you would like to work on, that you have some ideas about, and that are small enough for you to finish by the end of the semester.\
+2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
+3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
+\pard\pardeftab720
+
+\f1\fs32 \cf2 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa240
+\cf2 Josue\
+Task #2: Feature generation will be done by applying a discrete wavelet transformation to a time series and using a subset of the resulting coefficient vectors as feature vectors in the clustering algorithms. The PyWavelet python library ({\field{\*\fldinst{HYPERLINK "http://www.pybytes.com/pywavelets/"}}{\fldrslt http://www.pybytes.com/pywavelets}}/) provides functions to calculate the discrete wavelet transformation (wavedec()) and to regenerate a time series from a set of coefficient vectors (waverec()). A time series will be represented as a python list. The number of items in the list needs to be a power of 2, e.g., 2^3=8, 2^5=32. I will implement a function to encapsulate the wavelet transformation. This function will take as input a dictionary of time series. Each time series will need to have a name (e.g., \'91YHOO.2015.05\'92) and this name will be used as the key in the dictionary. The function will return a dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array. The elements in that array will be the coefficient vectors associated to the key. The function will also return another dictionary of arrays. The entry associated to a key in the dictionary (e.g., \'91YHOO.2015.05\'92) will be an array of reconstructed time series, each time series will have a different level of fidelity.\
+Task #3: SSE (Sum of Square Errors) will be used to measure the loss of fidelity in the reconstructed time series. For a time series X and reconstructed signal X\'92, the SEE value will be SSE(X,X\'92) = \\Sigma_\{t\} (Xt-X\'92t)^2, where Xt and X\'92t are the values of the original time series and the reconstructed signal at a particular point in time. With this metric we can evaluate the tradeoff between loss of fidelity and gain in clustering efficiency (as a result of using less features for each time series).
+\f3\fs26 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+
+\f1\fs32 \cf2 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa240
+\cf2 Kathy, Moon\
+Task #4: Although it is true that the more features we extract, the more precise time series data we can recover, there are two possible issues to consider. One of them is extracting more features are expensive. We may check elapsed time of overall task and compare it. The other of them is more features not alway mean a better model. It might over fit the data, as well as noise. We may check this by time-series cross validation, and drawing Knee curve of cross validation error.
+\f0\fs24 \
+
+\f1\fs32 This task is  to try extracting several numbers of features(also can be called complexity) of each data, getting cross-validation errors, and then finding the number of features which is on the steepest point of the knee curve of the cross validation errors.
+\f0\fs24 \
+
+\f1\fs32 Cross validation on time series is a bit different from non-time series data like this:\
+ts_cv.png({\field{\*\fldinst{HYPERLINK "https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0"}}{\fldrslt https://www.dropbox.com/s/i8e6nb6pbpetds3/ts_cv.png?dl=0}}) \
+
+\fs28 Kathy
+\f3 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720
+\cf2 \expnd0\expndtw0\kerning0
+2) Do you have ideas about how to complete the task?\'a0 Do you know how to solve the problem, write the code, or build the publication? If not, can you reformulate the problem to make it easier?\'a0 Do you need help from a team mate in performing your task?\'a0\
+\
+Yes, I am working with Moon to complete Task #4.  We have  good idea on how to complete this.  Also, I am using the project code to analyze Earthquake data.  I will be clustering the occurrences of the Earthquakes (in or within 50 miles of San Jose and Dallas) for May 2015, and May 2012. \
+\
+3)\'a0 Are their interfaces that need to be defined between your task and a team mates task? If two members are writing code, are the modules well defined and separated with clear interfaces?\'a0 Are the pieces of the presentation well defined so that the whole project will be presented and also that two people are not presenting the same material?\
+\
+Everyone is working on different aspects of the project.   Moon and I are working on task #4 together, however we will be dividing that task into separate activities. We will discuss our task2 participation separately.
+\fs26 \
+\pard\pardeftab720
+
+\f1\fs32 \cf2 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\sa240
+\cf2 Project Definition\
+\pard\pardeftab720
+\cf2 Description: The goal of this project is to apply an unsupervised learning approach to time series in order to discover a priori unknown relationships between instances in a given group of time series.  A naive approach to clustering time series would consist in using each point of a time series as a feature in the clustering process. However, the potentially very large number of features would make the use of clustering impractical. The approach used in this project consists in using wavelet transformation as a feature extraction mechanism for a clustering algorithm. In a wavelet transformation, a time series (signal) is represented by a vector of approximation coefficients and additional vectors of detail coefficients. The original signal is completely reconstructed by combining all the coefficient vectors in an inverse wavelet transformation. A reconstruction with less fidelity can be obtained by using only the vector of approximation coefficients and only some of the vectors with detail coefficients. In our approach, a limited number of vectors of coefficients are used as features in the clustering algorithms.\
+\
+Possible applications are: \
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls2\ilvl0\cf2 {\listtext	1	}Clustering of stock closing price time series in order to identify sufficiently distinct groups of stocks as a basis for a hedging strategy. \
+{\listtext	2	}Clustering of global currency exchange time series\
+{\listtext	3	}Clustering of Earthquake time series data for specific locations\
+{\listtext	4	}Other \
+\pard\pardeftab720
+\cf2 \
+Questions we need to address:\
+\
+\pard\pardeftab720
+
+\f3\fs26 \cf2 \expnd0\expndtw0\kerning0
+If your project involves testing a hypothesis or original research, your proposal should state explicitly all the following:\
+1. What your research question is.\
+\
+\pard\pardeftab720
+
+\f1\fs32 \cf2 \kerning1\expnd0\expndtw0 The goal of this project is to apply an unsupervised learning approach to time series in order to discover a priori unknown relationships between instances in a given group of time series. A potential application of this framework is the clustering of stocks based on their closing price time series in order to identify sufficiently distinct groups of stocks as a basis for a hedging strategy. A naive approach to clustering time series would consist in using each point of a time series as a feature in the clustering process. However, the potentially very large number of features would make the use of clustering impractical. The approach used in this project consists in using wavelet transformation as a feature extraction mechanism for a clustering algorithm. In a wavelet transformation, a time series (signal) is represented by a vector of approximation coefficients and additional vectors of detail coefficients. The original signal is completely reconstructed by combining all the coefficient vectors in an inverse wavelet transformation. A reconstruction with less fidelity can be obtained by using only the vector of approximation coefficients and only some of the vectors with detail coefficients. In our approach, a limited number of vectors of coefficients are used as features in the clustering algorithms.\
+\pard\pardeftab720
+
+\f3\fs26 \cf2 \expnd0\expndtw0\kerning0
+\
+2. Why this is an interesting question to ask and why we would care about the answer to this question.\
+\
+Clustering/analyzing Time Series data requires extensive computing resources due to the large number of data points.  The hypothesis of this project is that using a reduced number of features to represent time series results in more effective clustering. Effective means that the resulting groups make practical sense. We want to verify/reject this hypothesis by applying the approach to time series from different domains: stock closing prices, currency exchange rates and earthquake data. There is a caveat, one must be cautious of the risk of losing important data detail by using too course of an approximation.\
+\
+\
+3. Whether any existing research work has tried to answer the same or a similar question, and if so, what is still unknown.\
+\
+The approach used in this project is similar to the one used in Reference #1 \'93
+\f0\fs28 \kerning1\expnd0\expndtw0 Unsupervised Feature Extraction for Time Series Clustering Using Orthogonal Wavelet Transform
+\f3\fs26 \expnd0\expndtw0\kerning0
+\'94. In that study the authors use a benchmark time series data sets to evaluate the effectiveness of the approach. In our case, instead of a benchmark data set, we use time series from three distinct domains.\
+\
+\
+4. How you plan to work out the answer to the question.\
+\
+We will perform clustering on feature vectors representing different levels of time series fidelity and will evaluate if the resulting clusters have some practical sense. For example, in the case of stocks, we\'92ll see of the clusters correspond to time series that move up and down together, or have similar \'93amplitude\'94 (i.e., same price level).\
+\
+5. How you would evaluate your solution. That is, how you plan to demonstrate that your solution/answer is good or is reasonable.\
+\
+We plan to use data from two or three sources: stock, global currency and Earthquake data. \
+\
+If your project is to build a software tool, then your proposal should state explicitly all the following:\
+1. What the function of your tool exactly is. That is, what it will do.\
+2. Why we would need such a tool and who you would expect to use it.\
+3. Whether people have already built such a tool or a similar tool, and if so, how yours is different from or better than other tools.\
+4. How you plan to build it.\
+5. How you will demonstrate the usefulness of your tool.\
+6. A rough timeline to show when you expect to finish what.\
+  See our Task summary in the Project Plan. \
+7. VERY IMPORTANT: Please specify clearly what you plan to actually finish by the end of this semester.\
+Consider documenting your work regularly. This way, you will already have a lot of things written down by the end of the semester.}
