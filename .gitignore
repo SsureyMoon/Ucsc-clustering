@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 .ideacontacts
+=======
+.idea
+contacts
+*.pyc
+>>>>>>> 437093fecb919eb34968e2f33c92a5a6e5f466a8
+contacts -- kn
