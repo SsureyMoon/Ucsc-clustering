@@ -3,7 +3,7 @@
 \usepackage{amssymb}
 
 \title{Clustering of Time Series using Wavelet Transformations as a Feature Extraction Mechanism}
-\author{\textsf{Kathy Norman, Ssurey Moon, Felix Huang, Josu\'e Kuri}\\UCSC Extension. 30164:(003) Machine Learning and Data Mining}
+\author{\textsf{Josu\'e Kuri, Felix Huang, Ssurey Moon, Kathy Norman}\\UCSC Extension. 30164:(003) Machine Learning and Data Mining}
 
 \begin{document}
 \maketitle
@@ -206,11 +206,78 @@ Figure \ref{silhouette_score_eq} shows again the silhouette coefficient as a fun
 \end{center}
 \end{figure}
 
+
+blah blah
+
+\section{Examining Earthquake Data}
+\subsection{Earthquake Objectives and Data Details}
+
+The objective in examining earthquake data is two-fold: determining if Clustering Time Series using Wavlet decomposition is useful for evaluating Earthquake data; and if there is a relation between earthquake occurrences and fracking.
+
+Here are the data details:
+\begin{itemize}
+\item The data was taken from http://earthquake.usgs.gov/data/
+\item All earthquakes for 2011-2014 were collected, and the categorized according to UTM (grid map of the Earth, excluding the Polar Regions)
+\item Some documentation suggested that with respect to examining seismic activity, one should examine quakes with magnitude >3.  Given the substantial increase in quakes in 2013 and 2014 and the lack of seismic expertise, all data was used
+\item Included ~500 questionable records for 2013 and 2014. These records had a negative magnitude value. Since those records were extracted from a government site, and until 2013 had been very clean, this author choose to keep these value in.  Given more of an experiential than a technical knowledge of earthquakes, perhaps a negative magnitude was viable.  Also these records represented less than 0.0056% of the data for 2013 or 2014.
+\item  Converting Earthquake data to Time Series data involved creating an entry for each date within the years 2010-2014 for each UTM.  If there were no earthquakes on a specific date for the specific UTM, then the value was 0. If there were earthquakes for a specific date and specific UTM then record contained the number of earthquakes, and then a pair of values for each earthquake.  The pair contained the earthquake magnitude and depth.
+
+\end{itemize}
+
+\subsection{Earthquake Data Review}
+
+Figure \ref{quakeboxplot} shows the box plots for the global and the USA earthquake magnitude for 2010 to 2014.  For both Global and USA, notice that for the magnitude median is approximately 4 andthe second and third percentiles (percentage of data between 25% and 75%) is between 3 and 4.5.
+For 2013 and 2014, the magnitude median is approximately 1.5 and the percentage of data between 25% and 75% is between 1 and 2.25.  A significant change from 2010 to 2012! 
+Adjacent to the Global boxplot is a histogram showing the number of earthquakes for each year. There is a significant increase for 2013 and 2014 in comparison to 2010 to 2012.
+There is a  ~390% increase in 2013 versus 2010, and a  ~500% increase in 2014 versus 2010. This suggests that as the number of earthquakes increased the increased earthquakes were of a low magnitude.
+
+\begin{figure}
+\begin{center}
+\subfigure[Global Earthquake Summary]{\includegraphics[width=0.49\textwidth]{../earthquake-analysis/global-quake-summary.pdf}}
+\subfigure[USA Earthquake Summary]{\includegraphics[width=0.49\textwidth]{../earthquake-analysis/usa-quakes-summary.pdf}}
+\caption{Global and USA Earthquake Magnitude boxplot.} \label{quakeboxplot}
+\end{center}
+\end{figure}
+
+Figure \ref{quakesbyutm} show the frequency of earthquakes for each MTU zone by year.
+Notice the zones with the highest frequeccy are 10S, 11S, 14S, 10T, 11T, 12T. By referring to the USA map of UTM zones, 10S and 11S are California, and 14S is Texas and Oaklahoma.
+The MTU zones 10T, 11T, and 13T are Washington, Oregon, Idaho, Montana, and Wyoming.
+
+\begin{figure}
+\begin{center}
+\subfigure[USA Earthquake frequency for UTM zone, by year]{\includegraphics[width=0.49\textwidth]{../earthquake-analysis/usa-quakes-mtu-summary.pdf}}
+\subfigure[USA map of UTM zones]{\includegraphics[width=0.49\textwidth]{../earthquake-analysis/usa-utm.pdf}}
+\caption{USA Earthquake frequency by MTU zone and year,  with USA map.} \label{quakesbyutm}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\subfigure[Clustering USA quakes for 2010 and 2014]{\includegraphics[width=0.49\textwidth]{../earthquake-analysis/usa-quakes-cluster.pdf}}
+\caption{USA Earthquake Cluster using Kmeans.} \label{quakecluster}
+\end{center}
+\end{figure}
+
+Figure \ref{quakecluster} showing cluster of USA Earthquakes for 2010 and 2014.  THe 210 cluster does not seem to display any relationship between UTM zone and color of the cluster.
+Although there is multicolors indicating that Earthquake characteristics did cluster.  Recall that magnitude and depth are also clusternig values.  Perhaps magnitude and depth played a large role in assigning cluster.
+For year 2014, the MTU zone color is related to earthquake frequency.  For example the red cluster is the MTU zones 10S and 11S, which is Californis and part of Nevada.
+The green custer is the MTU zones 14S, 10T, 11T, and 12T which had high earthquake frequency.
+\subsection{Earthquake Conclusions}
+
+\begin{itemize}
+\item Earthquake data can be examined using Time Series with Wavelet Transformations.
+\item There is a relationship between Fracking and increased Earthquake frequency.
+\item The presence of Fracking in a geography is linked to Earthquakes of <= magnitude 3. This does not exclude the possibility that Fracking is linked with Earthquakes of  >3 magnitude.
+\end{itemize}
+
+
 \section{Conclusions}
 
 This project investigated the use of wavelet transformations as a feature extraction mechanism for the clustering of time series. A framework to evaluate the concept was developed and tested on three different time series data sets: closing prices for stocks, currency exchange rates, and earthquake data.
 
 The results of the experimental evaluation suggest that {\em both} a qualitative assessment as well as the evaluation of a number of measurements, such as the silhouette coefficient, are necessary to understand the data set and the particular combination of parameters for which a clustering algorithm offers the best performance. A premise of the project was that wavelet transformation as a feature extraction mechanism could potentially result in better clusterings. However, the results show that the silhouette coefficient is relatively insensitive to the degree of dimensionality reduction provided by the transformation (clustering level). As part of a process to improve tue quality of the clusterings, compementary performance measurements would need to be included in the evaluation.
+
 
 
 \appendix
