@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{subfigure,graphicx}
 \usepackage{amssymb}
+\usepackage{float}
 
 \title{Clustering of Time Series using Wavelet Transformations as a Feature Extraction Mechanism}
 \author{\textsf{Josu\'e Kuri, Felix Huang, Ssurey Moon, Kathy Norman}\\UCSC Extension. 30164:(003) Machine Learning and Data Mining}
@@ -168,32 +169,29 @@ using feature extraction (resolution) level six, number of clusters seven.}
 Clustering map contains information of not only tectonic plates geology, but also cluster changes over years. 
 Figure \ref{Cluster2010vs.2013} shows that clusters in 2010 are migrated in a cluster in 2013. We can assume that earthquake are more related to each other over years by some external causes, such as increasing number of mining on the earth.
 
-\begin{figure}
-\begin{center}
-\subfigure[Year 2010]{\includegraphics[width=0.75\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2010,level=6,number_of_cluster=7).pdf}}
-\subfigure[Year 2013]{\includegraphics[width=0.75\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2013,level=6,number_of_cluster=7).pdf}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.99\textwidth]{../earthquakedata/output_map_plot/MiniBatchKMeans(year=2010,2013,level=6,number_of_cluster=7).png}
 \caption{Clustering of earthquake frequency per day in 2010 vs. 2014 with K-mean
 using feature extraction (resolution) level six, number of clusters seven.}
 \label{Cluster2010vs.2013}
-\end{center}
 \end{figure}
 
 Next, we find out what algorithms and parameter setting are fit to earthquake dataset. Figure \ref{silhouette_levels_eq} shows the impact of the clustering level and the number of clusters on the silhouette coefficient. Clustering algorithms are not affected by number of clusters as much as stock price data is affected, except for k-mean clustering. K-means shows drastic changes when the number of cluster is small, since there are geologically a few plates.
 
-\begin{figure}
-\begin{center}
+\begin{figure}[H]
+\centering
 \subfigure[Level 2]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=2).pdf}}
 \subfigure[Level 4]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=4).pdf}}
 \subfigure[Level 6]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=6).pdf}}
 \subfigure[Level 8]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_number_of_cluster(level=8).pdf}}
 \caption{Silhouette coefficient for various clustering levels on earthquake frequency dataset.} \label{silhouette_levels_eq}
-\end{center}
 \end{figure}
 
-Figure \ref{silhouette_score_eq} shows again the silhouette coefficient as a function of the clustering level and the number of clusters. Unlike the Figure \ref{silhouette_score} of stock price, earthquake data set is fit to clustering algorithms with high feature extraction level(resolution), since earthquake frequency dataset are zero at most case, and there are earthquake in each UTM-zone for only a few days a month or a year. The higher level of feature extraction is, the more precise information we can pull out of such a trivial changes of earthquake frequency data.
+Figure \ref{silhouette_score_eq} shows again the silhouette coefficient as a function of the clustering level and the number of clusters. Unlike the Figure \ref{silhouette_score} of stock price, earthquake data set is fit to clustering algorithms with high feature extraction level (low resolution), since earthquake frequency dataset are zero at most case, and there are earthquake in each UTM-zone for only a few days a month or a year. The higher level of feature extraction is, the better we can describe earthquake frequency data.
 
-\begin{figure}
-\begin{center}
+\begin{figure}[H]
+\centering
 \subfigure[Two clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=2).pdf}}
 \subfigure[Three clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=3).pdf}}
 \subfigure[Four clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=4).pdf}}
@@ -203,7 +201,6 @@ Figure \ref{silhouette_score_eq} shows again the silhouette coefficient as a fun
 \subfigure[Eight clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=8).pdf}}
 \subfigure[Nine clusters]{\includegraphics[width=0.49\textwidth]{../earthquakedata/output_plot/silhouette_score_plot_per_level_(clusters=9).pdf}}
 \caption{Silhouette coefficient for various clustering levels on earthquake frequency dataset.} \label{silhouette_score_eq}
-\end{center}
 \end{figure}
 
 
@@ -282,7 +279,7 @@ The green cluster is the MTU zones 14S, 10T, 11T, and 12T which had high earthqu
 
 This project investigated the use of wavelet transformations as a feature extraction mechanism for the clustering of time series. A framework to evaluate the concept was developed and tested on three different time series data sets: closing prices for stocks, currency exchange rates, and earthquake data.
 
-The results of the experimental evaluation suggest that {\em both} a qualitative assessment as well as the evaluation of a number of measurements, such as the silhouette coefficient, are necessary to understand the data set and the particular combination of parameters for which a clustering algorithm offers the best performance. A premise of the project was that wavelet transformation as a feature extraction mechanism could potentially result in better clusterings. However, the results show that the silhouette coefficient is relatively insensitive to the degree of dimensionality reduction provided by the transformation (clustering level). As part of a process to improve tue quality of the clusterings, compementary performance measurements would need to be included in the evaluation.
+The results of the experimental evaluation suggest that {\em both} a qualitative assessment as well as the evaluation of a number of measurements, such as the silhouette coefficient, are necessary to understand the data set and the particular combination of parameters for which a clustering algorithm offers the best performance. A premise of the project was that wavelet transformation as a feature extraction mechanism could potentially result in better clusterings. However, the results show that the silhouette coefficient for stock price data is relatively less sensitive to the degree of dimensionality reduction provided by the transformation (clustering level) than the coefficient for earthquake data. The result shows that we need to identify important sets of parameters for each data set. As part of a process to improve the quality of the clusterings, complementary performance measurements would need to be included in the evaluation.
 
 
 
